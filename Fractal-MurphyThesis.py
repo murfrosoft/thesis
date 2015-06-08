@@ -49,7 +49,15 @@ g_height = 0
 g_width = 0
 g_padding = 0
 
-
+# ------------------------------------------------
+# boxCount() written for Master's Thesis work
+# by Michael C. Murphy
+# on May 12, 2015
+# ------------------------------------------------
+def getID():
+    """ Use local machine datetime to create a 12 digit ID
+    Returns a 12 digit ID as a string """
+    return datetime.strftime(datetime.now(), '%y%m%d%H%M%S')
 
 
 # THIS FUNCTION SHOULD BE DEPRECIATED !!!       
