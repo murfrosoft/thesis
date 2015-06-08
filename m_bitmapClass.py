@@ -4,9 +4,10 @@ import copy
 
 # Let's make a REAL BMP class
 class BMP(object):
-    def __init__(self, filename):
+    def __init__(self, filename, path=""):
         ''' pass in a filename of bitmap image and strip down to components '''
         self.filename = filename
+        self.path = path
         self.header = []            # save header for ease of saving modified images
         self.pixels = []            # save pixel information here
         self.height = 0             # image height
@@ -14,7 +15,7 @@ class BMP(object):
         self.padding = 0            # BMP padding data
 
         ''' open file and read raw data '''
-        with open(self.filename, 'rb') as f:
+        with open(self.path+self.filename, 'rb') as f:
             data = bytearray(f.read())
         f.close()
 
@@ -36,7 +37,7 @@ class BMP(object):
             Pixel data is stored as a 3-member array: [b,g,r] 
         """  
         padding = self.width%4   # explain this?
-        print("padding:",padding)
+        #print("padding:",padding)
 
         """ select image data subset """
         imageData = data[BFH.startaddr:BFH.filesize]
@@ -57,7 +58,7 @@ class BMP(object):
         s += "Pixel Count: " + str(len(self.pixels)*len(self.pixels[0])) + "\n"
         return(s)
 
-    def save( self, savefilename ):
+    def save( self, savefilename, savepath="" ):
         # Save original image header (we are only manipulating pixels)
         data = copy.copy(self.header)
         
@@ -70,10 +71,10 @@ class BMP(object):
                 data.append(0x00)
 
         # Write file
-        with open(savefilename, 'wb') as f:
+        with open(savepath+savefilename, 'wb') as f:
             f.write(data)
 
-        print("Saved to [" + savefilename + "], file size", len(data), "bytes")
+        print("Saved to [" + savepath+savefilename + "], file size", len(data), "bytes")
 
 
 
