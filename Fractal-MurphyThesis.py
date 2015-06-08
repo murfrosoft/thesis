@@ -4,6 +4,7 @@
 from m_fileio import create, append_to
 from m_bitmapClass import BitmapFileHeader, DIBHeader, BMP
 from m_filter import attenuate, addNoise
+from datetime import datetime
 
 
 from m_filter import filterBNW
@@ -13,6 +14,12 @@ from math import log, sqrt
 from random import random
 from statistics import variance
 import time
+
+# Adding some project setup parameters to aid in file management
+# Test Images to be processed are here:
+TEST_IMAGE_FILE_PATH = "../../thesis/test_images/"
+# Output files will be saved here:
+OUTPUT_FILE_PATH = "../../thesis/output_files/"
 
 
 # Globals --- YUCK :(
@@ -41,6 +48,8 @@ g_pix = []
 g_height = 0
 g_width = 0
 g_padding = 0
+
+
 
 
 # THIS FUNCTION SHOULD BE DEPRECIATED !!!       
@@ -897,10 +906,12 @@ def boxCount( bmp, gridsize, start_xy = (0,0), end_xy = "default" ):
         returns: tuple containing (#counted, gridsize)
     """
     paint = False
+
+    ''' debug outputs '''
+    #print(">Detected image width:",bmp.width)
+    #print(">Detected image height:",bmp.height)
+    #print(">Box size:",gridsize)
     
-    print(">Detected image width:",bmp.width)
-    print(">Detected image height:",bmp.height)
-    print(">Box size:",gridsize)
     # Verify start_xy is within image range
     if( start_xy[0] >= bmp.width or start_xy[1] >= bmp.height):
         print("[E01] Error, start_xy coordinate out of image range.")
@@ -926,7 +937,7 @@ def boxCount( bmp, gridsize, start_xy = (0,0), end_xy = "default" ):
         return(0,0)
 
     # We should have valid parameters here
-    print("> Parameters:", start_xy, end_xy, gridsize)
+    #print("> Parameters:", start_xy, end_xy, gridsize)
 
     # Let's do the algorithm
     total = 0
@@ -975,102 +986,25 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    testimage = "fractal_testgrid_pattern-circle.bmp"
-    
+    image_name = "circle.bmp"
+    testimage = TEST_IMAGE_FILE_PATH + image_name
+
+    # Create BMP object of image file    
     bmp = BMP(testimage)
+
+    # Setup test parameters
+    grid = [100,50,25,20,10,5,2]
+
+    # Perform Box Count Algorithm
+    bca(bmp, grid)
+    
     '''
     for i in range(10):
         bmp = addNoise(bmp,1000,"n+" + str((i+1)*1000) + "_circle.bmp")
         
     '''
-    print("\n# Test 01: test bca")
-    grid = [100,50,25,20,10,5,2]
-    bca(bmp, grid)
-    
-    
-    
-    '''
-    print("\n# Test 02: custom parameters")
-    print(boxCount(bmp, 25, (50,50)))
-    print("\n# Test 03: start_xy x out of range")
-    print(boxCount(bmp, 25, (600,10) ))
-    print("\n# Test 04: start_xy y out of range")
-    print(boxCount(bmp, 25, (10,600) ))
-    print("\n# Test 05: gridsize too big")
-    print(boxCount(bmp,500))
-    print("\n# Test 06: custom end_xy (valid)")
-    print(boxCount(bmp,25, (50,50), (250,250)))
-    print("\n# Test 07: custom end_xy (invaild)")
-    print(boxCount(bmp, 25, (50,50), (0,100)))
-    '''
 
     
-    '''
-    testimage = "P08.bmp"
-    for t in range(50,60,1):
-        bmp = BMP(testimage)
-        filterEdgeDetect2( bmp, t, "F_ED_" + str(t)+"_"+testimage)
-    #GO('T05.bmp')
-    '''
-    ######################3
-    # Test reading average variance of file
-    ##############################
-    '''
-    for t in range(0,52,2):
-        testfile = "a" + str(t) + "owl.txt"
-        print("\n> Testing file",testfile)
-        avgVariance(testfile,'owl/fdvarm/')
-    '''
-
-    ##########################
-    # Below is a test to sweep filter thresholds
-    #########################33
-    '''
-    testfile = "aowl.bmp"
-    
-    for t in range(0,52,2):
-        b = BMP(testfile)  #create BMP object
-        threshold = t
-        folder = "owl/"
-        savefile = "a"+str(threshold)+"owl.bmp"
-        filterEdgeDetect2(b,threshold,folder+savefile)
-        GO(savefile,folder)
-
-    '''
-
-
-
-
-
-    '''
-    print("Testing new BMP class:")
-    #b = BMP("test13_star.bmp")
-    #b = BMP("tiny.bmp")
-    #print(b)
-    #filterToBlue(b)
-    
-    testfile = "test06_coast.bmp"
-    
-    b = BMP(testfile)
-    filterBNW(b, 150, "bw_test06_coast.bmp")
-    
-    #filterEdgeDetect2( b, 50, "a_red_ed.bmp" )
-    '''
-    '''
-    b = BMP(testfile)
-    filterToGreen(b, "a_green.bmp")
-    filterEdgeDetect2( b, 50, "a_green_ed.bmp" )
-    b = BMP(testfile)
-    filterToBlue(b, "a_blue.bmp")
-    filterEdgeDetect2( b, 50, "a_blue_ed.bmp" )
-    
-    b = BMP(testfile)
-    filterToHue(b, "a_hue.bmp")
-    b = BMP(testfile)
-    filterToSat(b, "a_sat.bmp")
-    b = BMP(testfile)
-    filterToLight(b, "a_light.bmp")
-    '''
     
    
 
