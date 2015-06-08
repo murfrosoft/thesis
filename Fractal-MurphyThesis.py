@@ -50,14 +50,26 @@ g_width = 0
 g_padding = 0
 
 # ------------------------------------------------
-# boxCount() written for Master's Thesis work
+# getID() written for Master's Thesis work
 # by Michael C. Murphy
-# on May 12, 2015
+# on June 8, 2015
 # ------------------------------------------------
 def getID():
     """ Use local machine datetime to create a 12 digit ID
     Returns a 12 digit ID as a string """
     return datetime.strftime(datetime.now(), '%y%m%d%H%M%S')
+
+# ------------------------------------------------
+# ezSave() written for Master's Thesis work
+# by Michael C. Murphy
+# on June 8, 2015
+# ------------------------------------------------
+def ezSave(data, savefilename, path=""):
+    """ save string <data> to <path>+<savefilename> """
+    file = open(path+savefilename, "w")
+    file.write(data)
+    file.close()
+    print(" > Saved",savefilename)
 
 
 # THIS FUNCTION SHOULD BE DEPRECIATED !!!       
@@ -948,14 +960,14 @@ def boxCount( bmp, gridsize, start_xy = (0,0), end_xy = "default" ):
     #print("> Parameters:", start_xy, end_xy, gridsize)
 
     # Let's do the algorithm
-    total = 0
+    #total = 0
     counted = 0
     for y in range(start_xy[1], end_xy[1], gridsize):
         for x in range(start_xy[0], end_xy[0], gridsize):
-            total += 1
+            #total += 1
             if( testBox(bmp,x,y,gridsize,paint) ):
                 counted += 1
-    print(" - total",total)
+    #print(" - total",total)
     if( paint == True ):
         bmp.save("_p_g" + str(gridsize) + "_c" + str(counted) + "_" + bmp.filename)
     return (counted,gridsize)
@@ -970,6 +982,8 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     """
     results = []        # save (counted, gridsize)
     log_results = []    # save (log(counted), log(1/gridsize))
+
+    # for each grid test case, count the number of boxes and append to results
     for g in grid:
         r = boxCount(bmp,g)
         results.append(r)
@@ -984,24 +998,38 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     for s in slopes:
         avg += s
     avg /= (len(slopes))
+    var = variance(slopes)
 
-    print( "~D=",avg, "; V=",variance(slopes))
+    # Create a 'unique' timestamp ID for output file
+    runID = getID()
     
-    print(results)
-    print(log_results)
+    # Messages to display after algorithm completes:
+    print(" > BCA on", bmp.filename,"(ID "+runID+") - D("+str(round(avg,5))+") V("+str(round(var,5))+")")   
+    #print(results)
+    #print(log_results)
+    #print(slopes)
+
+    # Save output to file
+    output = "BCA on '"+bmp.filename+"' (ID: "+runID+")\n"
+    output += "Size\tCount\n"
+    for r in results:
+        output += str(r[1])+"\t"+str(r[0])+"\n"
+    output += "Dimension: "+str(avg)+"\n"
+    output += "Variance: "+str(var)+"\n"
+    ezSave(output,runID+"_"+bmp.filename[0:-4]+".txt",OUTPUT_FILE_PATH)
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
     image_name = "circle.bmp"
-    testimage = TEST_IMAGE_FILE_PATH + image_name
+    #testimage = TEST_IMAGE_FILE_PATH + image_name
 
     # Create BMP object of image file    
-    bmp = BMP(testimage)
+    bmp = BMP(image_name,TEST_IMAGE_FILE_PATH)
 
     # Setup test parameters
-    grid = [100,50,25,20,10,5,2]
+    grid = [100,50,25,10,5,2]
 
     # Perform Box Count Algorithm
     bca(bmp, grid)
@@ -1011,6 +1039,7 @@ if __name__ == '__main__':
         bmp = addNoise(bmp,1000,"n+" + str((i+1)*1000) + "_circle.bmp")
         
     '''
+    #ezSave("Test Save\nData123","test.txt",OUTPUT_FILE_PATH)
 
     
     
