@@ -1009,6 +1009,7 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     #print(log_results)
     #print(slopes)
 
+    '''
     # Save output to file
     output = "BCA on '"+bmp.filename+"' (ID: "+runID+")\n"
     output += "Size\tCount\n"
@@ -1017,12 +1018,15 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     output += "Dimension: "+str(avg)+"\n"
     output += "Variance: "+str(var)+"\n"
     ezSave(output,runID+"_"+bmp.filename[0:-4]+".txt",OUTPUT_FILE_PATH)
+    '''
+    return (avg,var)
+
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    image_name = "circle.bmp"
+    image_name = "norway.bmp"
     #testimage = TEST_IMAGE_FILE_PATH + image_name
 
     # Create BMP object of image file    
@@ -1032,14 +1036,21 @@ if __name__ == '__main__':
     grid = [100,50,25,10,5,2]
 
     # Perform Box Count Algorithm
-    bca(bmp, grid)
-    
-    '''
-    for i in range(10):
-        bmp = addNoise(bmp,1000,"n+" + str((i+1)*1000) + "_circle.bmp")
-        
-    '''
-    #ezSave("Test Save\nData123","test.txt",OUTPUT_FILE_PATH)
+    result = bca(bmp, grid)
+
+    # Start Test Data Run
+    output = "Sample Noise Test from 0-100000 on norway.bmp\n"
+    output += "Noise\tDimension\tVariance\n"
+    output += "0\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+
+    # First draft of adding noise test:
+    for i in range(1000):
+        bmp = addNoise(bmp,100)
+        bmp.filename = "n+" + str((i+1)*100) + image_name
+        result = bca(bmp,grid)
+        output += str((i+1)*100)+ "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+
+    ezSave(output,"NoiseTest007.txt",OUTPUT_FILE_PATH)
 
     
     
