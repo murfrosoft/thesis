@@ -1026,7 +1026,7 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    image_name = "norway.bmp"
+    image_name = "50fifty.bmp"
     #testimage = TEST_IMAGE_FILE_PATH + image_name
 
     # Create BMP object of image file    
@@ -1039,18 +1039,43 @@ if __name__ == '__main__':
     result = bca(bmp, grid)
 
     # Start Test Data Run
-    output = "Sample Noise Test from 0-100000 on norway.bmp\n"
+    output = "Sample Noise Test from 0-100000 on 50fifty.bmp using log-ish incrementing\n"
     output += "Noise\tDimension\tVariance\n"
     output += "0\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
 
     # First draft of adding noise test:
+    """ results: takes a long time and probably more data points at large noise values than needed 
     for i in range(1000):
         bmp = addNoise(bmp,100)
         bmp.filename = "n+" + str((i+1)*100) + image_name
         result = bca(bmp,grid)
         output += str((i+1)*100)+ "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    """
 
-    ezSave(output,"NoiseTest007.txt",OUTPUT_FILE_PATH)
+    # Second draft at adding noise test:
+    """
+    for i in range(10,110,10):
+        bmp = addNoise(bmp,10)
+        bmp.filename = "n+" + str(i) + image_name
+        result = bca(bmp,grid)
+        output += str(i) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    for i in range(200,1100,100):
+        bmp = addNoise(bmp,100)
+        bmp.filename = "n+" + str(i) + image_name
+        result = bca(bmp,grid)
+        output += str(i) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    for i in range(2000,11000,1000):
+        bmp = addNoise(bmp,1000)
+        bmp.filename = "n+" + str(i) + image_name
+        result = bca(bmp,grid)
+        output += str(i) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    for i in range(20000,110000,10000):
+        bmp = addNoise(bmp,10000)
+        bmp.filename = "n+" + str(i) + image_name
+        result = bca(bmp,grid)
+        output += str(i) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    """
+    #ezSave(output,"NoiseTest010.txt",OUTPUT_FILE_PATH)
 
     
     
