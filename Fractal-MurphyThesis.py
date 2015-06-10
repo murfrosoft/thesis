@@ -1026,7 +1026,7 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    image_name = "50fifty.bmp"
+    image_name = "circle.bmp"
     #testimage = TEST_IMAGE_FILE_PATH + image_name
 
     # Create BMP object of image file    
@@ -1039,10 +1039,10 @@ if __name__ == '__main__':
     result = bca(bmp, grid)
 
     # Start Test Data Run
-    output = "Sample Noise Test from 0-100000 on 50fifty.bmp using log-ish incrementing\n"
+    output = "Sample Attenuate Test from 0-1000 on circle.bmp\n"
     output += "Noise\tDimension\tVariance\n"
     output += "0\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
-
+    
     # First draft of adding noise test:
     """ results: takes a long time and probably more data points at large noise values than needed 
     for i in range(1000):
@@ -1075,9 +1075,16 @@ if __name__ == '__main__':
         result = bca(bmp,grid)
         output += str(i) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
     """
-    #ezSave(output,"NoiseTest010.txt",OUTPUT_FILE_PATH)
 
-    
+
+    # Try an attenuation test
+    for i in range(1,11):
+        bmp = attenuate(bmp,100)
+        bmp.filename = "a+" + str(i*100) + image_name
+        result = bca(bmp,grid)
+        output += str(i*100)+ "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+        
+    ezSave(output,"NoiseTest013.txt",OUTPUT_FILE_PATH)
     
    
 
