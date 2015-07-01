@@ -22,7 +22,7 @@ def print_results(result ):
 
 total_tests = 0
 total_fails = 0
-
+'''
 # TEST 001 --------------------------------------
 print("> Testcase #001 (import Bitmap Image)")
 total_tests += 1
@@ -46,7 +46,7 @@ if( c != 5114 ):
     result = False
     print("(!) Error in countSignal result:",c)
 total_fails += print_results(result)
-
+'''
 # TEST 003 --------------------------------------
 print("> Testcase #003 (test attenuate filter)")
 total_tests += 1
@@ -63,7 +63,28 @@ c3 = countSignal(bmp)
 if( (c2-c3) != 1000 ):
     result = False
     print("(!) Error in attenuate filter:",c2,c3)
-print(c1,c2,c3)
+bmp = attenuate(bmp,1000)
+c4 = countSignal(bmp)
+if( (c3-c4) != 1000 ):
+    result = False
+    print("(!) Error in attenuate filter:",c3,c4)
+bmp = attenuate(bmp,1000)
+c5 = countSignal(bmp)
+if( (c4-c5) != 1000 ):
+    result = False
+    print("(!) Error in attenuate filter:",c4,c5)
+bmp = attenuate(bmp,1000)
+c6 = countSignal(bmp)
+if( (c5-c6) != 1000 ):
+    result = False
+    print("(!) Error in attenuate filter:",c5,c6)
+bmp = attenuate(bmp,1000)
+c7 = countSignal(bmp)
+if( c7 != 0 ):
+    result = False
+    print("(!) Error attenuating all signal.")
+#print("Final signal = ",c7)
+#print(c1,c2,c3,c4,c5,c6)
 total_fails += print_results(result)
 
 
