@@ -187,7 +187,8 @@ def attenuate( bmp, threshold, savefile = '' ):
     # Verify threshold <= black pixels
     if (b_count < threshold):
         print("> Threshold greater than signal.")
-        return -1
+        threshold = b_count
+        #return bmp
     
     # Threshold is <= signal: time to remove signal
     atten_to = b_count - threshold  # attenuate signal to this count
@@ -202,7 +203,18 @@ def attenuate( bmp, threshold, savefile = '' ):
                     if( b_count <= atten_to ):
                         return bmp
                     
-        
+def countSignal(bmp):
+    """ Count the number of black pixels in image.
+    -- bmp: BMP object
+    @Returns: returns an integer containing number of black pixels
+    """
+    count = 0
+    for h in range(bmp.height):
+        for w in range(bmp.width):
+            if ( bmp.pixels[h][w] == BLACK or bmp.pixels[h][w] == (0,0,0) ):
+                count += 1
+    return count
+                
     
 
 def filterEdgeDetect2( bmp, threshold, savefile = '' ):
