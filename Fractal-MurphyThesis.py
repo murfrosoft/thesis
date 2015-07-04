@@ -9,7 +9,7 @@ from datetime import datetime
 
 from m_filter import filterBNW
 from m_filter import filterEdgeDetect2, filterThreshold
-from m_filter import intensity
+from m_filter import intensity, countSignal
 from math import log, sqrt
 from random import random
 from statistics import variance
@@ -71,6 +71,14 @@ def ezSave(data, savefilename, path=""):
     file.close()
     print(" > Saved",savefilename)
 
+# ------------------------------------------------
+# removeExtension() written for Master's Thesis work
+# by Michael C. Murphy
+# on July 3, 2015
+# ------------------------------------------------
+def removeExtension( stringName ):
+    """ removes the .123 extension from a string and returns this string """
+    return stringName[0:-4]
 
 # THIS FUNCTION SHOULD BE DEPRECIATED !!!       
 def createPixelMatrix( imgdata, width, height):
@@ -979,6 +987,7 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
         grid => an array of grid sizes (e.g. [100,50,25,20,10,5,2])
         start_xy => start coordinate (if applying to subimage)
         end_xy => end coordinate (if applying to subimage)
+        returns:  Tuple containing (avg dimension, variance)
     """
     results = []        # save (counted, gridsize)
     log_results = []    # save (log(counted), log(1/gridsize))
@@ -987,7 +996,11 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     for g in grid:
         r = boxCount(bmp,g)
         results.append(r)
-        log_results.append( (log(r[0]),log(1/r[1])) )
+        # protect against log(0) case:
+        if( r[0] == 0 ):
+            log_results.append( (log(1),log(1/r[1])) )
+        else:
+            log_results.append( (log(r[0]),log(1/r[1])) )
 
     # calculate Dimensional estimate (using average)
     slopes = []
@@ -1026,12 +1039,48 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    image_name = "circle.bmp"
+    # Begin large test run
+    image_array = ["blank.bmp","line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
+    # Setup test parameters
+    grid = [100,50,25,10,5,2]
+
+    for i in image_array:
+        for test_case in range(1,6):
+            bmp = BMP(i,TEST_IMAGE_FILE_PATH)
+            c = countSignal(bmp)
+            print(">",bmp.filename, "has", c, "black pixels.")
+            result = bca(bmp,grid)    # first BCA run (no noise)
+            output = "Box-Count Algorithm - addNoise test\n"
+            output += "Image: " + bmp.filename + "\n"
+            output += "Test #: " + str(test_case) + "\n"
+            output += "Original Signal: " + str(c) + "\n"
+            output += "Noise\tDimension\tVariance\n"
+            output += "0\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+            
+            noise_incrementer = 1
+            for noise in range(1000000):
+                bmp = addNoise(bmp,noise_incrementer)
+                nc = countSignal(bmp)
+                print("# Added Noise =",nc-c)
+                result = bca(bmp,grid)
+                output += str(nc-c) + "\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+                noise_incrementer += 1
+                if( nc >= 200000 ):
+                    ezSave(output,removeExtension(bmp.filename)+"_"+str(test_case)+".txt",OUTPUT_FILE_PATH)
+                    break
+
+
+    '''
+
+    image_name = "line.bmp"
     #testimage = TEST_IMAGE_FILE_PATH + image_name
 
     # Create BMP object of image file    
     bmp = BMP(image_name,TEST_IMAGE_FILE_PATH)
-
+    c = countSignal(bmp)
+    print(image_name, "has", c, "black pixels.")
+    '''
+    """
     # Setup test parameters
     grid = [100,50,25,10,5,2]
 
@@ -1042,6 +1091,7 @@ if __name__ == '__main__':
     output = "Sample Attenuate Test from 0-1000 on circle.bmp\n"
     output += "Noise\tDimension\tVariance\n"
     output += "0\t"+ str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    """
     
     # First draft of adding noise test:
     """ results: takes a long time and probably more data points at large noise values than needed 
@@ -1078,6 +1128,7 @@ if __name__ == '__main__':
 
 
     # Try an attenuation test
+    """
     for i in range(1,11):
         bmp = attenuate(bmp,100)
         bmp.filename = "a+" + str(i*100) + image_name
@@ -1086,5 +1137,5 @@ if __name__ == '__main__':
         
     ezSave(output,"NoiseTest013.txt",OUTPUT_FILE_PATH)
     
-   
+    """   
 
