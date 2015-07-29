@@ -3,7 +3,7 @@
 INPUT_FILEPATH = "../../thesis/testsuite/"
 OUTPUT_FILEPATH = "../../thesis/testsuite/"
 
-
+''' second computer git commit test comment '''
 # Bitmap class
 from m_bitmapClass import BMP
 
