@@ -201,7 +201,12 @@ def attenuate( bmp, threshold, savefile = '' ):
                     bmp.pixels[s[0]][s[1]] = (255,255,255)
                     b_count -= 1
                     if( b_count <= atten_to ):
+                        # Save image to a new file if prompted
+                        if( savefile != '' ):
+                            bmp.save(savefile)                   
                         return bmp
+
+
                     
 def countSignal(bmp):
     """ Count the number of black pixels in image.
