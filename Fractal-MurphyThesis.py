@@ -17,9 +17,10 @@ import time
 
 # Adding some project setup parameters to aid in file management
 # Test Images to be processed are here:
-TEST_IMAGE_FILE_PATH = "../../thesis/test_images/"
+TEST_IMAGE_FILE_PATH = "test_images/"
 # Output files will be saved here:
-OUTPUT_FILE_PATH = "../../thesis/output_files/"
+OUTPUT_FILE_PATH = "output/"
+#OUTPUT_FILE_PATH = "../../thesis/output_files/"
 
 
 # Globals --- YUCK :(
@@ -1034,11 +1035,57 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     '''
     return (avg,var)
 
+def attenuationTest01():
+    grid = [100,50,25,10,5,2]
+    bmp = BMP("owl.bmp",TEST_IMAGE_FILE_PATH)
+    signal = countSignal(bmp)
+
+    # Calculate the number of pixels of signal as a percentage
+    percentageAmt = []
+    for percent in range(1,101):
+        percentageAmt.append(round(signal*percent/100))
+
+    # Calculate how many pixels to attenuate with each percentage
+    attenuationAmt = [percentageAmt[0]]
+    for i in range(1,100):
+        attenuationAmt.append(percentageAmt[i]-percentageAmt[i-1])
+        
+    #print(len(percentageAmt),"--",percentageAmt)
+    #print(len(attenuationAmt),"--",attenuationAmt)
+    result = bca(bmp,grid) # first BCA run (no attenuation)
+
+    # Create header for output file
+    output = "Box-Count Algorithm - Percentage-based Attenuation test\n"
+    output += "Image: " + bmp.filename + "\n"
+    output += "Original Signal: " + str(signal) + "\n"
+    output += "%Attenuation\tSignalPixels\tDimension\tVariance\n"
+    output += "0\t"+ str(signal) + "\t" + str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    
+    #sumOfAttenuation = 0
+    #for a in attenuationAmt:
+    #    sumOfAttenuation += a
+    #print(sumOfAttenuation)
+
+    percentAttenuated = 0
+    for a in attenuationAmt:
+        bmp = attenuate(bmp,a)  # attenuate image
+        percentAttenuated += 1
+        signal = countSignal(bmp) # count amount of signal remaining
+        result = bca(bmp,grid)    # box-count algorithm
+
+        # save results
+        output += str(percentAttenuated) +" \t"+ str(signal) + "\t" + str(round(result[0],5)) + "\t" + str(round(result[1],5)) + "\n"
+    
+    ezSave(output,removeExtension(bmp.filename)+"_test"+".txt",OUTPUT_FILE_PATH)
+    print("attenuationTest01 complete.")
+
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
+    attenuationTest01()
+    """
     # Begin large test run
     image_array = ["blank.bmp","line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
     # Setup test parameters
@@ -1068,7 +1115,7 @@ if __name__ == '__main__':
                 if( nc >= 200000 ):
                     ezSave(output,removeExtension(bmp.filename)+"_"+str(test_case)+".txt",OUTPUT_FILE_PATH)
                     break
-
+    """
 
     '''
 
