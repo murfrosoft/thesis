@@ -1035,6 +1035,14 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     '''
     return (avg,var)
 
+
+# ------------------------------------------------
+# attenuationTest01() written for Master's Thesis work
+# by Michael C. Murphy
+# on July 30, 2015
+#
+# Percentage-based attenuation, 1 iteration per image
+# ------------------------------------------------
 def attenuationTest01():
     grid = [100,50,25,10,5,2]
     bmp = BMP("owl.bmp",TEST_IMAGE_FILE_PATH)
@@ -1079,12 +1087,80 @@ def attenuationTest01():
     ezSave(output,removeExtension(bmp.filename)+"_test"+".txt",OUTPUT_FILE_PATH)
     print("attenuationTest01 complete.")
 
+# ------------------------------------------------
+# attenuationTest02() written for Master's Thesis work
+# by Michael C. Murphy
+# on July 30, 2015
+#
+# Percentage-based attenuation, 1 iteration per image
+# ------------------------------------------------
+def attenuationTest02(imagename,iterations):
+    grid = [100,50,25,10,5,2]
+    bmp = BMP(imagename,TEST_IMAGE_FILE_PATH)
+    signal = countSignal(bmp)
+
+    # Create header for output file
+    output = "Box-Count Algorithm - Percentage-based Attenuation test\n"
+    output += "Image: " + bmp.filename + "\n"
+    output += "Original Signal: " + str(signal) + "\n"
+
+    # Calculate the number of pixels of signal as a percentage
+    percentageAmt = []
+    for percent in range(1,101):
+        percentageAmt.append(round(signal*percent/100))
+
+    # Calculate how many pixels to attenuate with each percentage
+    attenuationAmt = [percentageAmt[0]]
+    for i in range(1,100):
+        attenuationAmt.append(percentageAmt[i]-percentageAmt[i-1])
+
+    # Run # of successive attenuation tests
+    test_results = []
+    for i in range(iterations):
+        iter_results = []                           # blank test result
+        bmp = BMP(imagename,TEST_IMAGE_FILE_PATH)   # open fresh image
+        result = bca(bmp,grid)                      # perform first box-count algorithm
+        iter_results.append(result)                 # add first dimension/variance to test result
+
+        for a in attenuationAmt:        # for each round of percentage iteration (1% to 100%)
+            bmp = attenuate(bmp,a)      # attenuate image
+            signal = countSignal(bmp)   # count amount of signal remaining
+            result = bca(bmp,grid)      # box-count algorithmbmp =
+            iter_results.append(result) # add next dimension/variance to test result
+
+        test_results.append(iter_results)  # add test result to list of test results
+
+
+    # Save test results in easy-to-read output file
+    output += "%Attenuation\t"
+    for i in range(iterations):
+        output += "D"+str(i)+"\tVar" + str(i) + "\t"
+    output += "\n"
+
+    percentAttenuated = 0
+    for r in range(len(test_results[0])):    # 0 - 100 (101 total)
+        output += str(percentAttenuated) + "\t"
+        for i in range(iterations):          # number of iterations 0, 1, ...
+            output += str(round(test_results[i][r][0],5)) + "\t"
+            output += str(round(test_results[i][r][1],5)) + "\t"
+        output += "\n"
+        percentAttenuated += 1
+
+    ezSave(output,removeExtension(bmp.filename)+"_attenuation_"+str(iterations)+"iters"+".txt",OUTPUT_FILE_PATH)
+    print("attenuationTest02 complete.")
+    
+    return test_results
+
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    attenuationTest01()
+    image_array = ["line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
+    for image in image_array:
+           attenuationTest02(image,10)
+
+    
     """
     # Begin large test run
     image_array = ["blank.bmp","line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
