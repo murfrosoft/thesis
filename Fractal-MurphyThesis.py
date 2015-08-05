@@ -1093,6 +1093,11 @@ def attenuationTest01():
 # on July 30, 2015
 #
 # Percentage-based attenuation, 1 iteration per image
+#
+# Called using the following lines:
+#    image_array = ["line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
+#    for image in image_array:
+#           attenuationTest02(image,10)
 # ------------------------------------------------
 def attenuationTest02(imagename,iterations):
     grid = [100,50,25,10,5,2]
@@ -1151,14 +1156,38 @@ def attenuationTest02(imagename,iterations):
     
     return test_results
 
+def thresholdTest01(imagename):
+    grid = [100,50,25,10,5,2]
+
+    results = []
+    for threshold in range(1,201):
+        bmp = BMP(imagename,TEST_IMAGE_FILE_PATH)   # Open image file
+        bmp = filterEdgeDetect2(bmp, threshold)     # Filter image
+        result = bca(bmp,grid)                      # perform box-counting algorithm
+        results.append((threshold,result))
+
+    # Create header for output file
+    output = "Box-Count Algorithm - Threshold in edge detect filtering variation test\n"
+    output += "Image: " + bmp.filename + "\n"
+
+    output += "Threshold\tDimension\tVariance\n"
+    for r in results:
+        output += str(r[0]) + "\t"
+        output += str(round(r[1][0],5)) + "\t"
+        output += str(round(r[1][1],5)) + "\n"
+
+    ezSave(output,removeExtension(bmp.filename)+"threshold_variation01.txt",OUTPUT_FILE_PATH)
+    print("thresholdTest01 complete.")
+
+
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    image_array = ["line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
-    for image in image_array:
-           attenuationTest02(image,10)
+    thresholdTest01("original_road.bmp")
+
+    
 
     
     """
