@@ -121,14 +121,16 @@ def boxCount( bmp, gridsize, start_xy = (0,0), end_xy = "default" ):
     return (counted,gridsize)
 
 
-def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
+def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ,plot=False):
     """ box-count algorithm: computes the estimated Dimension and Variance of
         a sub-section of an image.
         bmp => image class
         grid => an array of grid sizes (e.g. [100,50,25,20,10,5,2])
         start_xy => start coordinate (if applying to subimage)
         end_xy => end coordinate (if applying to subimage)
-        returns:  Tuple containing (avg dimension, variance)
+        returns: Returns a dictonary of interesting values:
+        d[avg_dimension]
+        d[slope_variance] ...
     """
     results = []        # save (counted, gridsize)
     log_results = []    # save (log(counted), log(1/gridsize))
@@ -162,6 +164,7 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     #print(results)
     #print(log_results)
     #print(slopes)
+    
 
     '''
     # Save output to file
@@ -173,4 +176,15 @@ def bca( bmp, grid, start_xy = (0,0), end_xy = "default" ):
     output += "Variance: "+str(var)+"\n"
     ezSave(output,runID+"_"+bmp.filename[0:-4]+".txt",OUTPUT_FILE_PATH)
     '''
-    return (avg,var)
+    #return (avg,var)
+    d={}
+    d['image'] = bmp.filename
+    d['grid'] = grid
+    d['avgD'] = avg
+    d['var'] = var
+    d['results'] = log_results
+    d['slopes'] = slopes
+    return d
+
+
+    
