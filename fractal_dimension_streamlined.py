@@ -26,8 +26,8 @@ def jobcode():
 def timestamp():
     # Get current time
     t = time.localtime()
-    stamp = str(t.tm_mday) + str(t.tm_mon) + str(t.tm_year)
-    stamp += '_' + str(t.tm_hour) + ':' + str(t.tm_min) + ':' + str(t.tm_sec)
+    stamp = str(t.tm_year) + format(t.tm_mon, '02.0f') + format(t.tm_mday, '02.0f')
+    stamp += '_' + format(t.tm_hour, '02.0f') + format(t.tm_min, '02.0f') + format(t.tm_sec, '02.0f')
     return stamp
 
 # Create (append to) a log file
@@ -43,21 +43,31 @@ def datalog( D, filename ):
 
     log = open(filename, 'a')
     if not exists:
-        log.write("Timestamp,")
-        log.write("Jobcode,")
-        log.write("Imagename,")
-        log.write("Noise,")
-        log.write('G' + str(len(D['results'])) + ',')
+        # Create Log Header:
+        log.write("# Image Name: " + D['image-name'] + '\n')
+        log.write("# Image Path: " + D['imagepath'] + '\n')
+        log.write("# Image Resolution: " + D['resolution'] + '\n')
+        log.write("# Base Signal: " + str(D['base-signal']) + '\n')
+        log.write("# Noise Model: " + D['noise-model'] + '\n')
+        # -- List grid sizes: G#, width1, width2... --
+        log.write("# Grid Widths: ") # + str(len(D['results'])) + ',')
         for i in range(len(D['results'])):
             log.write(str(D['results'][i][1]) + ',')
         log.write('\n')
+        # -- Column headers --
+        log.write("# Timestamp, Noise%, Signal, Gridcount, Boxes Counted ..., Dimension, Variance\n")
+        
+    # Create new line in data log
     log.write(timestamp() + ',')
-    log.write(D['jobcode'] + ',')
-    log.write(D['image'] + ',')
+    #log.write(D['jobcode'] + ',')
+    #log.write(D['image'] + ',')
     log.write(str(D['noise']) + ',')
+    log.write(str(D['signalnoise']) + ',')   
     log.write('R' + str(len(D['results'])) + ',')
     for i in range(len(D['results'])):
         log.write(str(D['results'][i][0]) + ',')
+    log.write('D,' + str(D['dimension']) + ',')
+    log.write('V,' + str(D['variance']))
     log.write('\n')
     log.close()
     return
@@ -336,13 +346,19 @@ plot6330( a, b, c, d )
 input("stopped")
 '''
 # Test setup:  box width list and list of images
-grid = [3, 5, 10, 20, 30, 50, 100, 150, 300]
+GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
+NOISE_MODEL = "uniform"
 #image_library = ["circle.png","kochSnowflake.png","canopy.png","checkers.png"]
 image_library = ["test_images/Larger/kochSnowflake.png"]
 dim_test = [] # Holds the results of each images noise vs. dimension test
 var_test = []
 
 for image in image_library:
+    # create datalog id:  filename-timestamp
+    split_path = image.split('/')
+    image_prefix = split_path[-1].split('.')
+    logName = image_prefix[0] + "-" + timestamp() + ".log"
+    
     # Open the image and convert to 2D nparray
     img = get_rgb_from(image)
     print("Image imported")
@@ -351,23 +367,36 @@ for image in image_library:
 
     height = len(img)
     width = len(img[0])
+    base_signal = countSignal( img )
 
     dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
     var_data = []
     #for noise in [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,35,40,45,50]:
-    for noise in [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]:
+    #for noise in [0,.01,.02,.03,.04,.05,.06,.07,.08,.09,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,2,3,4,5,6,7,8,9,10,15,20,25,30,35,40,45,50]:
+    for noise in [0,.01,.02]:
         print("Adding Noise", noise, "%")
         #newimg = addNoise( img, noise, 2000)
-        newimg = addUniformNoise( img, noise )
+        if( NOISE_MODEL == "uniform" ):
+            newimg = addUniformNoise( img, noise )
+        else:
+            pass  # gaussian case will go here
+        
         c = countSignal( newimg )
         print("Signal Counted:",c)
         print("---", timeit(time.time()-start_time), "---")
-        D = boxCountAlgorithm(newimg, grid)
+        D = boxCountAlgorithm(newimg, GRID)
         # Log the results
-        D['image'] = image
-        D['jobcode'] = job
+        D['noise-model'] = NOISE_MODEL
+        D['image-name'] = split_path[-1]
+        D['resolution'] = str(width) + 'x' + str(height)
+        D['base-signal'] = base_signal
+
+        
+        D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
+        D['imagepath'] = image
+        #D['jobcode'] = job
         D['noise'] = noise
-        datalog(D, 'long_noise_snowflake.log')
+        datalog(D, logName)
 
         print("Fractal Dimension:", D['dimension'])
         print("---", timeit(time.time()-start_time), "---")
