@@ -13,6 +13,7 @@ class BMP(object):
         self.height = 0             # image height
         self.width  = 0             # image width
         self.padding = 0            # BMP padding data
+        
 
         ''' open file and read raw data '''
         with open(self.path+self.filename, 'rb') as f:
@@ -75,6 +76,7 @@ class BMP(object):
             f.write(data)
 
         print("Saved to [" + savepath+savefilename + "], file size", len(data), "bytes")
+
 
 
 
