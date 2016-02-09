@@ -80,6 +80,26 @@ def get_rgb_from(filename):
                 img[row][col] = 1
     return img
 
+# create a Uniform noise model with percent as parameter
+# Make sure to seed the noise!
+def addUniformNoise(inputArray, percent):
+    # Need to calculate the threshold of the noise added based off of size of input Array
+    # i.e. if input array is 2100 x 1800 pixels, and percent = 1%,
+    # Then we would calculate: 2100x1800*0.01 = 37800 as threshold
+    # Minimum number = 0, Maximum number = 2100x1800
+    
+    # create uniform matrix between 0 and 1
+    noise = np.random.uniform(size=(len(inputArray),len(inputArray[0])))
+
+    # only select percentage value of numbers as valid noise
+    threshold = percent / 100
+    noise = np.where( noise < threshold, -1, 0 )
+    inputArray = inputArray + noise
+    inputArray = np.where( inputArray > 0, 1, 0 )
+    return inputArray
+
+
+
 # add Noise (-1's in our case) to our image array)
 def addNoise( inputArray, threshold, maxThreshold ):
     # 1st create a random array from 0 to maxThreshold value that is the
@@ -334,9 +354,11 @@ for image in image_library:
 
     dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
     var_data = []
-    for noise in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,40,50,70,100,150,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1700,1900]:
+    #for noise in [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,35,40,45,50]:
+    for noise in [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]:
         print("Adding Noise", noise, "%")
-        newimg = addNoise( img, noise, 2000)
+        #newimg = addNoise( img, noise, 2000)
+        newimg = addUniformNoise( img, noise )
         c = countSignal( newimg )
         print("Signal Counted:",c)
         print("---", timeit(time.time()-start_time), "---")
