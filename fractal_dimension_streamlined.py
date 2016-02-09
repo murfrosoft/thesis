@@ -13,6 +13,7 @@ from random import randint
 
 
 # Create an 8 digit job code
+# Obsolete -- can remove
 def jobcode():
     s = ''
     while len(s) < 8:
@@ -31,9 +32,13 @@ def timestamp():
     return stamp
 
 # Create (append to) a log file
+# V1.00 - initial version of a data log for thesis project (each image run gets own log)
+# V1.01 - changed extension from .log to .csv; included log name in log header; Fixed Column Headers
+# V1.02 - added SEED placeholder to hold seed value used to create results
 def datalog( D, filename ):
     ''' log data stored in dictionary D into file named filename '''
     exists = False
+    LOG_VERSION = "1.02"  # keep track of changes to log format with this value
     try:
         log = open(filename, 'r')
         exists = True
@@ -44,18 +49,24 @@ def datalog( D, filename ):
     log = open(filename, 'a')
     if not exists:
         # Create Log Header:
+        log.write("# Datalog Version: " + LOG_VERSION + '\n')
+        log.write("# Log Name: " + D['logname'] + '\n')
         log.write("# Image Name: " + D['image-name'] + '\n')
         log.write("# Image Path: " + D['imagepath'] + '\n')
         log.write("# Image Resolution: " + D['resolution'] + '\n')
         log.write("# Base Signal: " + str(D['base-signal']) + '\n')
         log.write("# Noise Model: " + D['noise-model'] + '\n')
+        log.write("# Noise Seed: " + "tbd" + '\n')
         # -- List grid sizes: G#, width1, width2... --
         log.write("# Grid Widths: ") # + str(len(D['results'])) + ',')
         for i in range(len(D['results'])):
             log.write(str(D['results'][i][1]) + ',')
         log.write('\n')
         # -- Column headers --
-        log.write("# Timestamp, Noise%, Signal, Gridcount, Boxes Counted ..., Dimension, Variance\n")
+        log.write("# Timestamp,Noise%,Signal,Gridcount,")
+        for i in range(len(D['results'])):
+            log.write(str(D['results'][i][1]) + ',')
+        log.write("Dimension,Variance\n")
         
     # Create new line in data log
     log.write(timestamp() + ',')
@@ -66,8 +77,8 @@ def datalog( D, filename ):
     log.write('R' + str(len(D['results'])) + ',')
     for i in range(len(D['results'])):
         log.write(str(D['results'][i][0]) + ',')
-    log.write('D,' + str(D['dimension']) + ',')
-    log.write('V,' + str(D['variance']))
+    log.write(str(D['dimension']) + ',')
+    log.write(str(D['variance']))
     log.write('\n')
     log.close()
     return
@@ -321,6 +332,22 @@ def plot2( a, b ):
     
     plt.show()
 
+# Noise generator increases resolution every factor of 10
+def noise_generator( maximum ):
+    noise = 0
+    while noise <= maximum*1000:
+        yield noise/1000.0
+        if noise < 10:
+            noise += 1
+        elif noise < 100:
+            noise += 10
+        elif noise < 1000:
+            noise += 100
+        elif noise < 10000:
+            noise += 1000
+        else:
+            noise += 5000
+
 
 ''' START CODE BELOW '''
 start_time = time.time()
@@ -349,7 +376,7 @@ input("stopped")
 GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
 NOISE_MODEL = "uniform"
 #image_library = ["circle.png","kochSnowflake.png","canopy.png","checkers.png"]
-image_library = ["test_images/Larger/kochSnowflake.png"]
+image_library = ["test_images/Larger/kochSnowflake.png","test_images/Larger/circle.png","test_images/Larger/canopy.png","test_images/Larger/checkers.png"]
 dim_test = [] # Holds the results of each images noise vs. dimension test
 var_test = []
 
@@ -357,7 +384,7 @@ for image in image_library:
     # create datalog id:  filename-timestamp
     split_path = image.split('/')
     image_prefix = split_path[-1].split('.')
-    logName = image_prefix[0] + "-" + timestamp() + ".log"
+    logName = image_prefix[0] + "-" + timestamp() + ".csv"
     
     # Open the image and convert to 2D nparray
     img = get_rgb_from(image)
@@ -371,9 +398,7 @@ for image in image_library:
 
     dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
     var_data = []
-    #for noise in [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,35,40,45,50]:
-    #for noise in [0,.01,.02,.03,.04,.05,.06,.07,.08,.09,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,2,3,4,5,6,7,8,9,10,15,20,25,30,35,40,45,50]:
-    for noise in [0,.01,.02]:
+    for noise in noise_generator(50):
         print("Adding Noise", noise, "%")
         #newimg = addNoise( img, noise, 2000)
         if( NOISE_MODEL == "uniform" ):
@@ -390,6 +415,7 @@ for image in image_library:
         D['image-name'] = split_path[-1]
         D['resolution'] = str(width) + 'x' + str(height)
         D['base-signal'] = base_signal
+        D['logname'] = logName
 
         
         D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
