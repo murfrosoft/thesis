@@ -35,10 +35,11 @@ def timestamp():
 # V1.00 - initial version of a data log for thesis project (each image run gets own log)
 # V1.01 - changed extension from .log to .csv; included log name in log header; Fixed Column Headers
 # V1.02 - added SEED placeholder to hold seed value used to create results
+# V1.03 - added SEED data
 def datalog( D, filename ):
     ''' log data stored in dictionary D into file named filename '''
     exists = False
-    LOG_VERSION = "1.02"  # keep track of changes to log format with this value
+    LOG_VERSION = "1.03"  # keep track of changes to log format with this value
     try:
         log = open(filename, 'r')
         exists = True
@@ -56,7 +57,7 @@ def datalog( D, filename ):
         log.write("# Image Resolution: " + D['resolution'] + '\n')
         log.write("# Base Signal: " + str(D['base-signal']) + '\n')
         log.write("# Noise Model: " + D['noise-model'] + '\n')
-        log.write("# Noise Seed: " + "tbd" + '\n')
+        log.write("# Noise Seed: " + str(D['seed']) + '\n')
         # -- List grid sizes: G#, width1, width2... --
         log.write("# Grid Widths: ") # + str(len(D['results'])) + ',')
         for i in range(len(D['results'])):
@@ -103,20 +104,32 @@ def get_rgb_from(filename):
 
 # create a Uniform noise model with percent as parameter
 # Make sure to seed the noise!
-def addUniformNoise(inputArray, percent):
+def addUniformNoise(inputArray, percent, seed):
     # Need to calculate the threshold of the noise added based off of size of input Array
     # i.e. if input array is 2100 x 1800 pixels, and percent = 1%,
     # Then we would calculate: 2100x1800*0.01 = 37800 as threshold
     # Minimum number = 0, Maximum number = 2100x1800
+
+    # apply the seed
+    np.random.seed(seed)
     
     # create uniform matrix between 0 and 1
     noise = np.random.uniform(size=(len(inputArray),len(inputArray[0])))
 
     # only select percentage value of numbers as valid noise
     threshold = percent / 100
-    noise = np.where( noise < threshold, -1, 0 )
+    noise = np.where( noise < threshold, -1, 0 )   # -1 signals probabilty of noise
+
+    # where inputArray is 0 (black), flip noise sign to + to attenuate signal
+    noise = np.where( inputArray < 1, noise*-1, noise )
+
+    # now add noise to image
+    inputArray = inputArray + noise
+
+    ''' old noise -- only additive 
     inputArray = inputArray + noise
     inputArray = np.where( inputArray > 0, 1, 0 )
+    '''
     return inputArray
 
 
@@ -354,6 +367,21 @@ start_time = time.time()
 
 job = jobcode()
 
+
+# perfecting uniform noise test
+'''
+img = get_rgb_from("test_images/Larger/checkers.png")
+plt.imshow(img, cmap="Greys_r")
+plt.show()
+for i in range(10,110,10):
+    newimg = addUniformNoise(img, i,101)
+    plt.imshow(newimg, cmap="Greys_r")
+    plt.show()
+
+input("pause")
+'''
+
+
 # Test new dimensional function
 
 # Now let's import an image
@@ -375,8 +403,15 @@ input("stopped")
 # Test setup:  box width list and list of images
 GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
 NOISE_MODEL = "uniform"
-#image_library = ["circle.png","kochSnowflake.png","canopy.png","checkers.png"]
-image_library = ["test_images/Larger/kochSnowflake.png","test_images/Larger/circle.png","test_images/Larger/canopy.png","test_images/Larger/checkers.png"]
+SEED = 101
+#image_library = ["test_images/Larger/blank.png"]
+#image_library = ["test_images/Larger/kochSnowflake.png","test_images/Larger/circle.png","test_images/Larger/canopy.png","test_images/Larger/checkers.png"]
+
+image_library = []
+for i in range(5,55,5):
+    image_library.append("test_images/Larger/fallleaf/"+str(i)+"fallleaf.png")
+image_library.append("test_images/Larger/blank.png")
+
 dim_test = [] # Holds the results of each images noise vs. dimension test
 var_test = []
 
@@ -402,7 +437,7 @@ for image in image_library:
         print("Adding Noise", noise, "%")
         #newimg = addNoise( img, noise, 2000)
         if( NOISE_MODEL == "uniform" ):
-            newimg = addUniformNoise( img, noise )
+            newimg = addUniformNoise( img, noise, SEED )
         else:
             pass  # gaussian case will go here
         
@@ -412,6 +447,7 @@ for image in image_library:
         D = boxCountAlgorithm(newimg, GRID)
         # Log the results
         D['noise-model'] = NOISE_MODEL
+        D['seed'] = SEED
         D['image-name'] = split_path[-1]
         D['resolution'] = str(width) + 'x' + str(height)
         D['base-signal'] = base_signal
