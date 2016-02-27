@@ -3,6 +3,7 @@
 # Michael C. Murphy
 # Code started: November, 2016
 
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -362,14 +363,109 @@ def noise_generator( maximum ):
             noise += 5000
 
 
-''' START CODE BELOW '''
-start_time = time.time()
+def main():
+    # To Run, enter as arguments:
+    # (1) Path to Image
+    # (2) Noise Model: (-u) uniform (-g) gaussian
+    # (3) Noise Seed: (1-1000)
+    if( len(sys.argv) != 4 ):
+        sys.exit("[ERROR] Insufficient Arguments. [Image Path] [Noise Model] [Seed]")
 
-job = jobcode()
+    if( sys.argv[2] == "-u" ):
+        NOISE_MODEL = "uniform"
+    elif( sys.argv[2] == "-g" ):
+        NOISE_MODEL = "gaussian"
+    else:
+        sys.exit("[ERROR] Noise Model: -u (uniform) or -g (gaussian)")
+
+    try:
+        SEED = int(sys.argv[3])
+    except:
+        sys.exit("[ERROR] Invalid SEED Argument")
+
+    image = sys.argv[1]
+
+    print("@=========================================@")
+    print("| Simulation Setup")
+    print("| Image:",image)
+    print("| Noise:",NOISE_MODEL)
+    print("| Seed:",SEED)
+    print("@=========================================@")
+
+    start_time = time.time()
+
+    # Test Setup
+    GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
+    
+    # create datalog id:  filename-timestamp
+    split_path = image.split('/')
+    image_prefix = split_path[-1].split('.')
+    logName = image_prefix[0]
+    if( NOISE_MODEL == "uniform" ):
+        logName += "_u"
+    else:
+        logName += "_g"
+    logName += str(SEED) + "-" + timestamp() + ".csv"
+        
+    # Open the image and convert to 2D nparray
+    img = get_rgb_from(image)
+    print("Image imported")
+    print("---", timeit(time.time()-start_time), "---")
+    print("Array is",len(img),"x",len(img[0]))
+
+    height = len(img)
+    width = len(img[0])
+    base_signal = countSignal( img )
+
+    dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
+    var_data = []
+    for noise in noise_generator(50):
+        print(" > Noise: " + str(noise) + "%", end=" ")
+
+        if( NOISE_MODEL == "uniform" ):
+            newimg = addUniformNoise( img, noise, SEED ) 
+        else:
+            sys.exit("[ERROR] Gaussian Noise Model Not Yet Implemented")
+            
+        c = countSignal( newimg )
+        #print("Signal Counted:",c)
+        #print("---", timeit(time.time()-start_time), "---")
+        D = boxCountAlgorithm(newimg, GRID)
+        # Log the results
+        D['noise-model'] = NOISE_MODEL
+        D['seed'] = SEED
+        D['image-name'] = split_path[-1]
+        D['resolution'] = str(width) + 'x' + str(height)
+        D['base-signal'] = base_signal
+        D['logname'] = logName
+
+        D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
+        D['imagepath'] = image
+        D['noise'] = noise
+        datalog(D, logName)
+
+        #print("Fractal Dimension:", D['dimension'])
+        print(" > Dimension (" + format(D['dimension'], '.3f') + "); BCA completed: ", timeit(time.time()-start_time))
+        dim_data.append( (D['dimension'], noise) )
+        var_data.append( (D['variance'], noise) )
+
+    print(">> Complete. Log file:", logName)
+    
 
 
-# perfecting uniform noise test
+
+main()
+print("main loop complete. check for log")
+sys.exit()
+
+###''' START CODE BELOW '''
+###start_time = time.time()
+###
+###job = jobcode()
+
+
 '''
+# perfecting uniform noise test
 img = get_rgb_from("test_images/Larger/checkers.png")
 plt.imshow(img, cmap="Greys_r")
 plt.show()
@@ -401,72 +497,83 @@ plot6330( a, b, c, d )
 input("stopped")
 '''
 # Test setup:  box width list and list of images
-GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
-NOISE_MODEL = "uniform"
-SEED = 101
-#image_library = ["test_images/Larger/blank.png"]
-#image_library = ["test_images/Larger/kochSnowflake.png","test_images/Larger/circle.png","test_images/Larger/canopy.png","test_images/Larger/checkers.png"]
-
+#GRID = [3, 5, 10, 20, 30, 50, 100, 150, 300]
+#NOISE_MODEL = "uniform"
+#SEED = 101
+#image_library = ["test_images/Larger/norwaymap.png"]
 image_library = []
-for i in range(5,55,5):
-    image_library.append("test_images/Larger/fallleaf/"+str(i)+"fallleaf.png")
+image_library.append("test_images/Larger/kochSnowflake.png")
+image_library.append("test_images/Larger/circle.png")
+image_library.append("test_images/Larger/canopy.png")
+image_library.append("test_images/Larger/checkers.png")
 image_library.append("test_images/Larger/blank.png")
+image_library.append("test_images/Larger/fifty50.png")
+image_library.append("test_images/Larger/koch3lines.png")
+image_library.append("test_images/Larger/norwaymap.png")
+image_library.append("test_images/Larger/line.png")
+
+#image_library = []
+#for i in range(5,55,5):
+#    image_library.append("test_images/Larger/fallleaf/"+str(i)+"fallleaf.png")
+#image_library.append("test_images/Larger/blank.png")
 
 dim_test = [] # Holds the results of each images noise vs. dimension test
 var_test = []
 
-for image in image_library:
-    # create datalog id:  filename-timestamp
-    split_path = image.split('/')
-    image_prefix = split_path[-1].split('.')
-    logName = image_prefix[0] + "-" + timestamp() + ".csv"
-    
-    # Open the image and convert to 2D nparray
-    img = get_rgb_from(image)
-    print("Image imported")
-    print("---", timeit(time.time()-start_time), "---")
-    print("Array is",len(img),"x",len(img[0]))
 
-    height = len(img)
-    width = len(img[0])
-    base_signal = countSignal( img )
-
-    dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
-    var_data = []
-    for noise in noise_generator(50):
-        print("Adding Noise", noise, "%")
-        #newimg = addNoise( img, noise, 2000)
-        if( NOISE_MODEL == "uniform" ):
-            newimg = addUniformNoise( img, noise, SEED )
-        else:
-            pass  # gaussian case will go here
+for seed in range(101,102,10):
+    for image in image_library:
+        # create datalog id:  filename-timestamp
+        split_path = image.split('/')
+        image_prefix = split_path[-1].split('.')
+        logName = image_prefix[0] + "-" + timestamp() + ".csv"
         
-        c = countSignal( newimg )
-        print("Signal Counted:",c)
+        # Open the image and convert to 2D nparray
+        img = get_rgb_from(image)
+        print("Image imported")
         print("---", timeit(time.time()-start_time), "---")
-        D = boxCountAlgorithm(newimg, GRID)
-        # Log the results
-        D['noise-model'] = NOISE_MODEL
-        D['seed'] = SEED
-        D['image-name'] = split_path[-1]
-        D['resolution'] = str(width) + 'x' + str(height)
-        D['base-signal'] = base_signal
-        D['logname'] = logName
+        print("Array is",len(img),"x",len(img[0]))
 
-        
-        D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
-        D['imagepath'] = image
-        #D['jobcode'] = job
-        D['noise'] = noise
-        datalog(D, logName)
+        height = len(img)
+        width = len(img[0])
+        base_signal = countSignal( img )
 
-        print("Fractal Dimension:", D['dimension'])
-        print("---", timeit(time.time()-start_time), "---")
-        dim_data.append( (D['dimension'], noise) )
-        var_data.append( (D['variance'], noise) )
-    dim_test.append(dim_data)
+        dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
+        var_data = []
+        for noise in noise_generator(50):
+            print("Adding Noise", noise, "%")
+            #newimg = addNoise( img, noise, 2000)
+            if( NOISE_MODEL == "uniform" ):
+                newimg = addUniformNoise( img, noise, seed ) #SEED
+            else:
+                pass  # gaussian case will go here
+            
+            c = countSignal( newimg )
+            print("Signal Counted:",c)
+            print("---", timeit(time.time()-start_time), "---")
+            D = boxCountAlgorithm(newimg, GRID)
+            # Log the results
+            D['noise-model'] = NOISE_MODEL
+            D['seed'] = seed #SEED
+            D['image-name'] = split_path[-1]
+            D['resolution'] = str(width) + 'x' + str(height)
+            D['base-signal'] = base_signal
+            D['logname'] = logName
 
-    var_test.append(var_data)
+            
+            D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
+            D['imagepath'] = image
+            #D['jobcode'] = job
+            D['noise'] = noise
+            datalog(D, logName)
+
+            print("Fractal Dimension:", D['dimension'])
+            print("---", timeit(time.time()-start_time), "---")
+            dim_data.append( (D['dimension'], noise) )
+            var_data.append( (D['variance'], noise) )
+        dim_test.append(dim_data)
+
+        var_test.append(var_data)
 
 print("--- Finished in: ", timeit(time.time()-start_time), "---")
 # When we are done processing, let's plot the results:
