@@ -405,7 +405,7 @@ def main():
         logName += "_u"
     else:
         logName += "_g"
-    logName += str(SEED) + "-" + timestamp() + ".csv"
+    logName += format(SEED, '03.0f') + "-" + timestamp() + ".csv"
         
     # Open the image and convert to 2D nparray
     img = get_rgb_from(image)
