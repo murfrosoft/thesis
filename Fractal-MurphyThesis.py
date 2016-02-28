@@ -14,6 +14,10 @@ from math import log, sqrt
 from random import random
 from statistics import variance
 import time
+import m_boxcount as box
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Adding some project setup parameters to aid in file management
 # Test Images to be processed are here:
@@ -1180,15 +1184,132 @@ def thresholdTest01(imagename):
     print("thresholdTest01 complete.")
 
 
+def get_rgb_from(filename):
+    img = mpimg.imread(filename, )            # read png img file
+    img = np.delete(img,np.s_[3:],axis=2)   # strips alpha channel
+    return img
 
+def make_bw( img , threshold = 0):
+    bw = np.array(img,dtype=int) # copy array same size but using ints
+    for row in range(len(img[0])):
+        for col in range(len(img[0,0])):
+            if img[col][row].sum()/3 > threshold:
+                bw[col,row] = 1
+            else:
+                bw[col,row] = 0
+    return bw
+
+
+    
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
+    
+    #thresholdTest01("original_road.bmp")
+    
+    import matplotlib.image as mpimg
+    """
+    img = get_rgb_from('test_images/test.png')
 
-    thresholdTest01("original_road.bmp")
 
+    fig = plt.figure()
+    ax1 = fig.add_subplot(121)
+    ax1 = plt.imshow(img, interpolation = 'none')
+    
+    #print("raw:",img)
+    img = make_bw(img)
+    ax2 = fig.add_subplot(122)
+    ax2 = plt.imshow(img, interpolation = 'none')
+
+    plt.show()
+    x = input()
+
+    # import image as 3D array (float values)
+    img = mpimg.imread('test_images/test2.png')
+    
+    # convert it to array of integers
+    #img = np.array(img,dtype=int)
+
+    # strip alpha channel
+    #img = np.delete(img,np.s_[3:],axis=2)
+    
+    print(img)
+    imgplot = plt.imshow(img, interpolation = 'none')
+    plt.show()
+
+    x = input()
+
+    # attempt to put bmp pixel data into a numpy array...
+    bmp = BMP("norway.bmp",TEST_IMAGE_FILE_PATH)
+
+    # First initialize an empty numpy array
+    pix = np.empty([bmp.height,bmp.width],dtype=int)
+
+    # next populate numpy array with 1's and 0's    
+    for h in range(bmp.height):
+        for w in range(bmp.width):
+            if( intensity(bmp.pixels[h][w]) == 0 ):
+                pix[bmp.height-h-1,w] = 1
+            else:
+                pix[bmp.height-h-1,w] = 0
+
+    print(pix[0][0])
+
+    # And try to plot it...
+    im = plt.imshow(pix, interpolation = 'none', cmap=plt.cm.gray)
+    plt.show()
     
 
+
+   # grid = [100,90,80,70,60,50,25,10,5,2]
+    grid = []
+    for x in range(100,1,-1):
+        grid.append(x)
+    #image_array = ["blank.bmp","line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
+    image_array = ["line.bmp","leaf.bmp","circle.bmp","koch.bmp","norway.bmp","owl.bmp","50fifty.bmp"]
+    #image_array = ["owl.bmp"]
+    color_codes = 'bgrcmyk'
+    index = 0
+    fig = plt.figure(1)
+    fig.suptitle(" bca", fontsize = 10)
+    for i in image_array:
+        bmp = BMP(i,TEST_IMAGE_FILE_PATH)
+        result = box.bca(bmp,grid,plot=True)
+        for key in result:
+            print(key, ":", result[key])
+        x = []
+        y = []
+        for val in result['results']:
+            x.append(val[1])
+            y.append(val[0])
+        
+        plt.plot(x,y,color_codes[index]+'-',linestyle='-', marker='.', linewidth = 1.0, label=i)
+        if index < 6:
+            index += 1
+        else:
+            index = 0
+    legend = plt.legend()
+    for label in legend.get_texts():
+        label.set_fontsize('small')
+    #plt.legend(loc='upper center', fancybox=True, shadow=True, ncol=3, bbox_to_anchor=(0.5,1.05))
+    plt.legend(loc='center left', bbox_to_anchor=(0,0.75))
+    #plt.minorticks_on()
+    plt.grid(b=True, which='major', color='0.7', linestyle='-')
+    #plt.grid(b=True, which='minor', color='0.5', linestyle='--')
+    ax = fig.add_subplot(111)
+    ax.set_title('log-log 1/d vs. Boxcount')
+    ax.set_xlabel('log 1/d')
+    ax.set_ylabel('log Boxcount')
+    plt.show()
+    """
+
+    # validate new box-count algorithm code (using numpy)
+    grid = [2,5,10,20,30,50,100,150,300]
+    bmp = BMP('kochSnowflake.bmp',TEST_IMAGE_FILE_PATH)
+    c = countSignal(bmp)
+    print("Signal:",c)
+    result = bca(bmp,grid)
+    print(result)
     
     """
     # Begin large test run
