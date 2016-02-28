@@ -37,10 +37,11 @@ def timestamp():
 # V1.01 - changed extension from .log to .csv; included log name in log header; Fixed Column Headers
 # V1.02 - added SEED placeholder to hold seed value used to create results
 # V1.03 - added SEED data
+# V1.04 - added 0.0001% to noise case, and added commas to make into clean csv
 def datalog( D, filename ):
     ''' log data stored in dictionary D into file named filename '''
     exists = False
-    LOG_VERSION = "1.03"  # keep track of changes to log format with this value
+    LOG_VERSION = "1.04"  # keep track of changes to log format with this value
     try:
         log = open(filename, 'r')
         exists = True
@@ -51,19 +52,19 @@ def datalog( D, filename ):
     log = open(filename, 'a')
     if not exists:
         # Create Log Header:
-        log.write("# Datalog Version: " + LOG_VERSION + '\n')
-        log.write("# Log Name: " + D['logname'] + '\n')
-        log.write("# Image Name: " + D['image-name'] + '\n')
-        log.write("# Image Path: " + D['imagepath'] + '\n')
-        log.write("# Image Resolution: " + D['resolution'] + '\n')
-        log.write("# Base Signal: " + str(D['base-signal']) + '\n')
-        log.write("# Noise Model: " + D['noise-model'] + '\n')
-        log.write("# Noise Seed: " + str(D['seed']) + '\n')
+        log.write("# Datalog Version: " + LOG_VERSION + ',,,,,,,,,,,,,,\n')
+        log.write("# Log Name: " + D['logname'] + ',,,,,,,,,,,,,,\n')
+        log.write("# Image Name: " + D['image-name'] + ',,,,,,,,,,,,,,\n')
+        log.write("# Image Path: " + D['imagepath'] + ',,,,,,,,,,,,,,\n')
+        log.write("# Image Resolution: " + D['resolution'] + ',,,,,,,,,,,,,,\n')
+        log.write("# Base Signal: " + str(D['base-signal']) + ',,,,,,,,,,,,,,\n')
+        log.write("# Noise Model: " + D['noise-model'] + ',,,,,,,,,,,,,,\n')
+        log.write("# Noise Seed: " + str(D['seed']) + ',,,,,,,,,,,,,,\n')
         # -- List grid sizes: G#, width1, width2... --
         log.write("# Grid Widths: ") # + str(len(D['results'])) + ',')
         for i in range(len(D['results'])):
-            log.write(str(D['results'][i][1]) + ',')
-        log.write('\n')
+            log.write(str(D['results'][i][1]) + '|')
+        log.write(',,,,,,,,,,,,,,\n')
         # -- Column headers --
         log.write("# Timestamp,Noise%,Signal,Gridcount,")
         for i in range(len(D['results'])):
@@ -349,18 +350,22 @@ def plot2( a, b ):
 # Noise generator increases resolution every factor of 10
 def noise_generator( maximum ):
     noise = 0
-    while noise <= maximum*1000:
-        yield noise/1000.0
-        if noise < 10:
-            noise += 1
+    while noise <= maximum*10000:
+        yield noise/10000.0
+        if noise == 0:
+            noise = 1      # 0.0001% noise case...
+        elif noise == 1:
+            noise = 10     # Jump to 0.001% noise case.
         elif noise < 100:
             noise += 10
         elif noise < 1000:
             noise += 100
         elif noise < 10000:
             noise += 1000
+        elif noise < 100000:
+            noise += 10000
         else:
-            noise += 5000
+            noise += 50000
 
 
 def main():
