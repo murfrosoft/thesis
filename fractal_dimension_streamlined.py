@@ -11,17 +11,6 @@ from math import log
 from statistics import variance
 import time
 from random import randint
-
-
-# Create an 8 digit job code
-# Obsolete -- can remove
-def jobcode():
-    s = ''
-    while len(s) < 8:
-        n = randint(48,122)
-        if chr(n).isalnum():
-            s += chr(n)
-    return s
     
 
 # Create a time stamp for data logging
@@ -73,7 +62,6 @@ def datalog( D, filename ):
         
     # Create new line in data log
     log.write(timestamp() + ',')
-    #log.write(D['jobcode'] + ',')
     #log.write(D['image'] + ',')
     log.write(str(D['noise']) + ',')
     log.write(str(D['signalnoise']) + ',')   
@@ -465,8 +453,7 @@ sys.exit()
 
 ###''' START CODE BELOW '''
 ###start_time = time.time()
-###
-###job = jobcode()
+
 
 
 '''
@@ -508,14 +495,7 @@ input("stopped")
 #image_library = ["test_images/Larger/norwaymap.png"]
 image_library = []
 image_library.append("test_images/Larger/kochSnowflake.png")
-image_library.append("test_images/Larger/circle.png")
-image_library.append("test_images/Larger/canopy.png")
-image_library.append("test_images/Larger/checkers.png")
-image_library.append("test_images/Larger/blank.png")
-image_library.append("test_images/Larger/fifty50.png")
-image_library.append("test_images/Larger/koch3lines.png")
-image_library.append("test_images/Larger/norwaymap.png")
-image_library.append("test_images/Larger/line.png")
+
 
 #image_library = []
 #for i in range(5,55,5):
@@ -526,63 +506,13 @@ dim_test = [] # Holds the results of each images noise vs. dimension test
 var_test = []
 
 
-for seed in range(101,102,10):
-    for image in image_library:
-        # create datalog id:  filename-timestamp
-        split_path = image.split('/')
-        image_prefix = split_path[-1].split('.')
-        logName = image_prefix[0] + "-" + timestamp() + ".csv"
-        
-        # Open the image and convert to 2D nparray
-        img = get_rgb_from(image)
-        print("Image imported")
-        print("---", timeit(time.time()-start_time), "---")
-        print("Array is",len(img),"x",len(img[0]))
+       # dim_test.append(dim_data)
 
-        height = len(img)
-        width = len(img[0])
-        base_signal = countSignal( img )
+        #var_test.append(var_data)
 
-        dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
-        var_data = []
-        for noise in noise_generator(50):
-            print("Adding Noise", noise, "%")
-            #newimg = addNoise( img, noise, 2000)
-            if( NOISE_MODEL == "uniform" ):
-                newimg = addUniformNoise( img, noise, seed ) #SEED
-            else:
-                pass  # gaussian case will go here
-            
-            c = countSignal( newimg )
-            print("Signal Counted:",c)
-            print("---", timeit(time.time()-start_time), "---")
-            D = boxCountAlgorithm(newimg, GRID)
-            # Log the results
-            D['noise-model'] = NOISE_MODEL
-            D['seed'] = seed #SEED
-            D['image-name'] = split_path[-1]
-            D['resolution'] = str(width) + 'x' + str(height)
-            D['base-signal'] = base_signal
-            D['logname'] = logName
-
-            
-            D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
-            D['imagepath'] = image
-            #D['jobcode'] = job
-            D['noise'] = noise
-            datalog(D, logName)
-
-            print("Fractal Dimension:", D['dimension'])
-            print("---", timeit(time.time()-start_time), "---")
-            dim_data.append( (D['dimension'], noise) )
-            var_data.append( (D['variance'], noise) )
-        dim_test.append(dim_data)
-
-        var_test.append(var_data)
-
-print("--- Finished in: ", timeit(time.time()-start_time), "---")
+#print("--- Finished in: ", timeit(time.time()-start_time), "---")
 # When we are done processing, let's plot the results:
-plot2( dim_test[0], var_test[0] )
+#plot2( dim_test[0], var_test[0] )
 
 
 
