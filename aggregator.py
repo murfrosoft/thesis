@@ -19,7 +19,8 @@ def main():
     d = [3, 5, 10, 20, 30, 50, 100, 150, 300]
 
     F = {}  # Data Dictionary using filenames as keys
-    for filename in sys.argv[1:]:
+    filelist = sys.argv[1:]  # hold a list of files used
+    for filename in filelist:
         N = {} # Data Dictonary holding Noise data
         file = open(filename, 'r')
         for line in file:
@@ -93,13 +94,13 @@ def main():
         aggregated_results.append( (float(noisekey), average_dimensional_estimate, dim_standard_error, average_slope_variance_estimate, dsl_standard_error) )
 
     aggregated_results.sort()
-    '''
-    for item in aggregated_results:
-        print(">> ", item)
-        '''
-
+    
+    #for item in aggregated_results:
+    #    print(">> ", item)
+        
     # TODO: Need to save this data to a file
-
+    aggregate_datalog( aggregated_results, filelist, image_name )
+        
     # Attempt to plot:
     nx = []
     dimy = []
@@ -130,32 +131,38 @@ def main():
     axarr[1].errorbar(nx,vary,varerr,fmt='r')
     axarr[1].plot(nx,vary, label="variance")
 
-
-    plt.show()
+    plt.savefig("figures/" + image_name + "_uniform_D_V_vs_N.png")
+    #plt.show()
         
 
+# results_array - an array of tuples of the form (noise, dimension, dimension std err, variance, variance std err)
+# filelist - a list of filenames that were included in the aggregated data
+# Version: V1.00 - initial log format
+def aggregate_datalog( results_array, filelist, image_name ):
+    LOG_VERSION = "1.00"
+    pathname = "logfiles/"
+    filename = pathname + image_name + "_" + str(len(filelist)) + "_aggregateLog.csv"
 
-            
-            
-# Noise generator increases resolution every factor of 10
-def noise_generator( maximum ):
-    noise = 0
-    while noise <= maximum*10000:
-        yield noise/10000.0
-        if noise == 0:
-            noise = 1      # 0.0001% noise case...
-        elif noise == 1:
-            noise = 10     # Jump to 0.001% noise case.
-        elif noise < 100:
-            noise += 10
-        elif noise < 1000:
-            noise += 100
-        elif noise < 10000:
-            noise += 1000
-        elif noise < 100000:
-            noise += 10000
-        else:
-            noise += 50000    
+    log = open(filename, 'w')
+    # Write the header
+    log.write("# Aggregate Log Version: " + LOG_VERSION + ",,,,\n")
+    log.write("# Log Name: " + filename + ",,,,\n")
+    log.write("# Noise%, Dimension, Dim Std Err, Variance, Var Std Err\n")
+
+    # Write the data
+    for data in results_array:
+        log.write(str(data[0]) + "," + str(data[1]) + "," + str(data[2]) + "," + str(data[3]) + "," + str(data[4]) + "\n")
+
+    # Write a list of the files included in this data aggregation
+    log.write("# The data files below are included in this aggregation:,,,,\n")
+    for file in filelist:
+        log.write("# " + file + ",,,,\n")
+
+    print(">> Created aggregate datalog:", filename)
+    log.close()
+
+    
+    
     
 
 
