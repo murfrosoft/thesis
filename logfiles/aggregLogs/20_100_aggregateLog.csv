@@ -1,0 +1,151 @@
+# Aggregate Log Version: 1.00,,,,
+# Log Name: logfiles/20_100_aggregateLog.csv,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err
+0.0,1.57583863856,2.23163224624e-17,0.0306969758806,3.48692538475e-19
+0.0001,1.57573032352,3.96453473125e-06,0.0309887680531,3.19850959736e-06
+0.001,1.57496011057,9.98636000849e-06,0.0337614151209,1.13031116275e-05
+0.002,1.57479487745,1.19101456597e-05,0.0367393118304,1.61981852507e-05
+0.003,1.57454113481,1.28580010066e-05,0.0396566536828,1.71065257211e-05
+0.004,1.57443448094,1.48023465633e-05,0.0425181750726,1.92399601263e-05
+0.005,1.57440436392,1.37350350064e-05,0.0452196330399,2.05281516167e-05
+0.006,1.57450299301,1.46497177185e-05,0.0477358102474,2.14704693995e-05
+0.007,1.57459640807,1.39963127325e-05,0.0499956409829,2.20706315483e-05
+0.008,1.57486917602,1.26612984832e-05,0.0523772126828,2.26324435366e-05
+0.009,1.57508498599,1.29611333101e-05,0.0546179068388,2.39168070002e-05
+0.01,1.57528873347,1.24836135048e-05,0.0568328386047,2.52135764741e-05
+0.02,1.5771758767,9.70696482567e-06,0.0743519480494,2.29513023001e-05
+0.03,1.57814943568,7.77463832805e-06,0.0864875436623,2.13962748181e-05
+0.04,1.57903769289,6.49190876256e-06,0.0955146356159,2.13625462879e-05
+0.05,1.58013882822,5.96926027362e-06,0.102945520741,1.96679031884e-05
+0.06,1.58156412213,5.88609582756e-06,0.10908177376,1.79331129912e-05
+0.07,1.58331036213,6.13704947445e-06,0.114097435785,1.63802694835e-05
+0.08,1.58526441048,6.68648518516e-06,0.118368663312,1.50304289303e-05
+0.09,1.58727490506,6.77472431356e-06,0.122376524392,1.4299346907e-05
+0.1,1.58937581094,6.9801158438e-06,0.125891723366,1.46401692294e-05
+0.2,1.61080406095,6.88241776514e-06,0.150613526411,1.12191181586e-05
+0.3,1.62830786184,5.68334170188e-06,0.166609811028,9.19057671674e-06
+0.4,1.64200481794,5.46742500462e-06,0.178413631162,7.76408619453e-06
+0.5,1.65307771358,4.949105022e-06,0.187435843115,8.03722086873e-06
+0.6,1.66231006756,4.51509600765e-06,0.194283122572,8.05912793433e-06
+0.7,1.67031521576,3.95833938041e-06,0.199521832896,6.76057952547e-06
+0.8,1.6773766304,3.77670853418e-06,0.20339332446,6.11228727507e-06
+0.9,1.6837502275,3.74407677379e-06,0.206187913862,6.12078025253e-06
+1.0,1.68966862235,3.35493785524e-06,0.208151732122,5.84475084045e-06
+2.0,1.7366915794,3.10292184222e-06,0.203473218475,5.30177108921e-06
+3.0,1.77270672101,3.43533951698e-06,0.180506965834,5.33771814017e-06
+4.0,1.8019187073,3.11959157143e-06,0.155491695625,5.11428675026e-06
+5.0,1.82618671676,2.98961599142e-06,0.132670725898,4.94395364718e-06
+6.0,1.84675553454,2.8976712002e-06,0.112576404678,4.60108511213e-06
+7.0,1.86441511799,2.89291519819e-06,0.0950671653298,4.41858857842e-06
+8.0,1.87975053804,2.86624995283e-06,0.0798402551108,3.93006868708e-06
+9.0,1.89313682236,2.54894856279e-06,0.0667310839057,3.4972718838e-06
+10.0,1.90490238036,2.41308562709e-06,0.0554799150644,3.08337949751e-06
+15.0,1.94655696741,1.78587397409e-06,0.0204509147394,1.38848525243e-06
+20.0,1.97015022219,1.30126970118e-06,0.00682581359962,6.03297938166e-07
+25.0,1.98364651673,9.77233677946e-07,0.00210648378864,2.54721085292e-07
+30.0,1.99129987773,7.38477536938e-07,0.000602238134348,1.03317269142e-07
+35.0,1.99554347336,5.21950011333e-07,0.000158650362547,3.72825626276e-08
+40.0,1.99781887105,3.23027591842e-07,3.80487429415e-05,1.12517227641e-08
+45.0,1.99897765852,2.30039306142e-07,8.36496529193e-06,3.75633758289e-09
+50.0,1.99952059455,1.59606848897e-07,1.84054762398e-06,1.22469112346e-09
+# The data files below are included in this aggregation:,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u001-20160314_073042.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u002-20160314_073343.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u003-20160314_073344.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u004-20160314_073354.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u005-20160314_073353.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u006-20160314_073512.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u007-20160314_073526.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u008-20160314_073546.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u009-20160314_073610.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u010-20160314_073620.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u011-20160314_073624.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u012-20160314_073642.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u013-20160314_073658.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u014-20160314_073709.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u015-20160314_073749.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u016-20160314_073755.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u017-20160314_073821.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u018-20160314_073832.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u019-20160314_073834.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u020-20160314_073834.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u021-20160314_073837.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u022-20160314_073844.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u023-20160314_073906.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u024-20160314_073909.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u025-20160314_073911.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u026-20160314_073924.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u027-20160314_073952.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u028-20160314_073957.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u029-20160314_074010.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u030-20160314_074011.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u031-20160314_074026.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u032-20160314_074037.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u033-20160314_074058.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u034-20160314_074100.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u035-20160314_074105.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u036-20160314_074118.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u037-20160314_074124.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u038-20160314_074125.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u039-20160314_074150.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u040-20160314_074211.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u041-20160314_074214.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u042-20160314_074226.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u043-20160314_074232.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u044-20160314_074256.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u045-20160314_074308.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u046-20160314_074308.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u047-20160314_074329.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u048-20160314_074343.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u049-20160314_074347.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u050-20160314_074405.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u051-20160314_074413.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u052-20160314_074505.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u053-20160314_074519.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u054-20160314_074530.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u055-20160314_074535.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u056-20160314_074537.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u057-20160314_074541.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u058-20160314_074548.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u059-20160314_074557.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u060-20160314_074644.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u061-20160314_074718.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u062-20160314_074724.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u063-20160314_074732.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u064-20160314_074815.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u065-20160314_074815.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u066-20160314_074819.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u067-20160314_074824.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u068-20160314_074824.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u069-20160314_074828.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u070-20160314_074851.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u071-20160314_074900.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u072-20160314_074901.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u073-20160314_074902.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u074-20160314_074914.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u075-20160314_074916.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u076-20160314_074934.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u077-20160314_074942.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u078-20160314_075005.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u079-20160314_075024.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u080-20160314_075053.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u081-20160314_075113.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u082-20160314_075129.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u083-20160314_075149.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u084-20160314_075153.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u085-20160314_075201.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u086-20160314_075211.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u087-20160314_075240.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u088-20160314_075247.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u089-20160314_075301.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u090-20160314_075319.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u091-20160314_075340.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u092-20160314_075344.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u093-20160314_075548.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u094-20160314_075755.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u095-20160314_075933.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u096-20160314_075936.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u097-20160314_080002.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u098-20160314_080043.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u099-20160314_080319.csv,,,,
+# logfiles/owl_thresh/20_thr_owl/20_thr_owl_u100-20160314_080720.csv,,,,
