@@ -336,7 +336,7 @@ def plot2( a, b ):
     plt.show()
 
 # Noise generator increases resolution every factor of 10
-def noise_generator( maximum ):
+def uniform_noise_generator( maximum ):
     noise = 0
     while noise <= maximum*10000:
         yield noise/10000.0
@@ -354,6 +354,22 @@ def noise_generator( maximum ):
             noise += 10000
         else:
             noise += 50000
+
+def gaussian_noise_generator( maximum ):
+    sigma = 0
+    while sigma <= maximum:
+        yield sigma
+        if sigma == 0:
+            sigma = 1
+        elif sigma < 10:
+            sigma += 1
+        elif sigma < 50:
+            sigma += 5
+        elif sigma < 100:
+            sigma += 10
+        else:
+            sigma += 25
+
 
 
 def main():
@@ -412,35 +428,65 @@ def main():
 
     dim_data = []  # Prepare to append array of tuples containing (Dimension, Noise%)
     var_data = []
-    for noise in noise_generator(50):
-        print(" > Noise: " + str(noise) + "%", end=" ")
+    
+    if( NOISE_MODEL == "uniform" ):
+        for noise in uniform_noise_generator(50):
+            print(" > Noise: " + str(noise) + "%", end=" ")
 
-        if( NOISE_MODEL == "uniform" ):
             newimg = addUniformNoise( img, noise, SEED ) 
-        else:
-            sys.exit("[ERROR] Gaussian Noise Model Not Yet Implemented")
+                
+            c = countSignal( newimg )
+            #print("Signal Counted:",c)
+            #print("---", timeit(time.time()-start_time), "---")
+            D = boxCountAlgorithm(newimg, GRID)
+            # Log the results
+            D['noise-model'] = NOISE_MODEL
+            D['seed'] = SEED
+            D['image-name'] = split_path[-1]
+            D['resolution'] = str(width) + 'x' + str(height)
+            D['base-signal'] = base_signal
+            D['logname'] = logName
+
+            D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
+            D['imagepath'] = image
+            D['noise'] = noise
+            datalog(D, logName)
+
+            #print("Fractal Dimension:", D['dimension'])
+            print(" > Dimension (" + format(D['dimension'], '.3f') + "); BCA completed: ", timeit(time.time()-start_time))
+            dim_data.append( (D['dimension'], noise) )
+            var_data.append( (D['variance'], noise) )
             
-        c = countSignal( newimg )
-        #print("Signal Counted:",c)
-        #print("---", timeit(time.time()-start_time), "---")
-        D = boxCountAlgorithm(newimg, GRID)
-        # Log the results
-        D['noise-model'] = NOISE_MODEL
-        D['seed'] = SEED
-        D['image-name'] = split_path[-1]
-        D['resolution'] = str(width) + 'x' + str(height)
-        D['base-signal'] = base_signal
-        D['logname'] = logName
+    elif( NOISE_MODEL == "gaussian" ):
+        for noise in gaussian_noise_generator(200):
+            print(" > Noise: " + str(noise) + "%", end=" ")
 
-        D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
-        D['imagepath'] = image
-        D['noise'] = noise
-        datalog(D, logName)
+            newimg = addUniformNoise( img, noise, SEED ) 
+                
+            c = countSignal( newimg )
+            #print("Signal Counted:",c)
+            #print("---", timeit(time.time()-start_time), "---")
+            D = boxCountAlgorithm(newimg, GRID)
+            # Log the results
+            D['noise-model'] = NOISE_MODEL
+            D['seed'] = SEED
+            D['image-name'] = split_path[-1]
+            D['resolution'] = str(width) + 'x' + str(height)
+            D['base-signal'] = base_signal
+            D['logname'] = logName
 
-        #print("Fractal Dimension:", D['dimension'])
-        print(" > Dimension (" + format(D['dimension'], '.3f') + "); BCA completed: ", timeit(time.time()-start_time))
-        dim_data.append( (D['dimension'], noise) )
-        var_data.append( (D['variance'], noise) )
+            D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
+            D['imagepath'] = image
+            D['noise'] = noise
+            datalog(D, logName)
+
+            #print("Fractal Dimension:", D['dimension'])
+            print(" > Dimension (" + format(D['dimension'], '.3f') + "); BCA completed: ", timeit(time.time()-start_time))
+            dim_data.append( (D['dimension'], noise) )
+            var_data.append( (D['variance'], noise) )
+
+
+            
 
     print(">> Complete. Log file:", logName)
     
