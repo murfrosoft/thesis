@@ -11,6 +11,7 @@ from math import log
 from statistics import variance
 import time
 from random import randint
+from scipy import ndimage    # required for Gaussian image filter
     
 
 # Create a time stamp for data logging
@@ -91,6 +92,13 @@ def get_rgb_from(filename):
             else:
                 img[row][col] = 1
     return img
+
+# Gaussian requires more information to apply filter...
+def get_rgb2_from(filename):
+    img3D = mpimg.imread(filename, )            # read png img file
+    img3D = np.delete(img3D,np.s_[3:],axis=2)   # strips alpha channel
+
+    return img3D  # was img
 
 # create a Uniform noise model with percent as parameter
 # Make sure to seed the noise!
@@ -367,8 +375,10 @@ def gaussian_noise_generator( maximum ):
             sigma += 5
         elif sigma < 100:
             sigma += 10
+        elif sigma < 250:
+            sigma += 50
         else:
-            sigma += 25
+            sigma += 250
 
 
 
@@ -415,9 +425,16 @@ def main():
     else:
         logName += "_g"
     logName += format(SEED, '03.0f') + "-" + timestamp() + ".csv"
+
+    if( NOISE_MODEL == "uniform" ):
+        # Open the image and convert to 2D nparray
+        img = get_rgb_from(image)
+    else:
+        # Gaussian requires more information to apply filter
+        img = get_rgb2_from(image)
+
+
         
-    # Open the image and convert to 2D nparray
-    img = get_rgb_from(image)
     print("Image imported")
     print("---", timeit(time.time()-start_time), "---")
     print("Array is",len(img),"x",len(img[0]))
@@ -458,10 +475,26 @@ def main():
             var_data.append( (D['variance'], noise) )
             
     elif( NOISE_MODEL == "gaussian" ):
-        for noise in gaussian_noise_generator(200):
-            print(" > Noise: " + str(noise) + "%", end=" ")
+        for sig in gaussian_noise_generator(1000):
+            print(" > Sigma: " + str(sig) + "%", end=" ")
 
-            newimg = addUniformNoise( img, noise, SEED ) 
+            #newimg = addUniformNoise( img, noise, SEED )
+            # ** GAUSSIAN NOISE FILTER **
+            img_gaus = ndimage.gaussian_filter(img, sigma=(sig), order=0)
+
+            # Create shell newimg to host data based on gaussian filtering
+            newimg = np.empty( [len(img_gaus), len(img_gaus[0])], dtype=int )  # temp matrix - all 0 ints - same size as image
+            
+            np.random.seed(SEED)   # apply the seed
+
+            # For each element in img_gaus, probabilistically set the pixel in newimg
+            for row in range( len(newimg) ):
+                for col in range( len(newimg[0]) ):
+                    # Gaussian filter algorithm here:
+                    if( np.random.random() > img_gaus[row][col][0] ):
+                        newimg[row][col] = 0   # set to black
+                    else:
+                        newimg[row][col] = 1
                 
             c = countSignal( newimg )
             #print("Signal Counted:",c)
@@ -477,13 +510,13 @@ def main():
 
             D['signalnoise'] = c  # counts number of signal + noise pixels remaining in image
             D['imagepath'] = image
-            D['noise'] = noise
+            D['noise'] = sig
             datalog(D, logName)
 
             #print("Fractal Dimension:", D['dimension'])
             print(" > Dimension (" + format(D['dimension'], '.3f') + "); BCA completed: ", timeit(time.time()-start_time))
-            dim_data.append( (D['dimension'], noise) )
-            var_data.append( (D['variance'], noise) )
+            dim_data.append( (D['dimension'], sig) )
+            var_data.append( (D['variance'], sig) )
 
 
             
