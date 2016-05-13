@@ -85,8 +85,8 @@ def main():
 
             # KEY3: Sum( Abs( Central Difference ) ) SAC
             CentralDiffs = []
-            for i in range(len(slopes) - 1):
-                CentralDiffs.append( (slopes[i]+slopes[i+1])/2 )
+            for i in range(len(slopes) - 2):
+                CentralDiffs.append( slopes[i]/2 - slopes[i+2]/2)
 
             SAC = 0
             for cd in CentralDiffs:
@@ -179,19 +179,19 @@ def plot_agg( aggregated_results, image_name, seed_count, noise_type):
     # Create a figure with 5 subplots
     fig, axarr = plt.subplots(5, sharex=True)
     if( noise_type == 'u'):
-        fig.suptitle("Box Count Algorithm on " + image_name + " (Uniform Noise, " + str(seed_count) + " Seeds)", fontsize=14, fontweight='bold')
+        fig.suptitle("Key Comparisons on " + image_name + " (Uniform Noise, " + str(seed_count) + " Seeds)", fontsize=14, fontweight='bold')
     else:
-        fig.suptitle("Box Count Algorithm on " + image_name + " (Gaussian Noise, " + str(seed_count) + " Seeds)", fontsize=14, fontweight='bold')
-
+        fig.suptitle("Key Comparisons on " + image_name + " (Gaussian Noise, " + str(seed_count) + " Seeds)", fontsize=14, fontweight='bold')
+    fig.set_size_inches(8,12,forward=True)  # try to set size of plot??
         
-    axarr[0].set_ylabel("dimension")
+    axarr[0].set_ylabel("Dimension")
     axarr[0].set_xscale('log')
     axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
     axarr[0].set_ylim(0,2)
     axarr[0].errorbar(nx,dimy,dimerr,fmt='r')
     axarr[0].plot(nx,dimy, label="dimension")
 
-    axarr[1].set_ylabel("slope variance")
+    axarr[1].set_ylabel("Slope Variance")
     #axarr[1].set_xlabel("noise %")
     axarr[1].set_xscale('log')
     axarr[1].set_title("Mean Slope Variance vs. Noise %")
@@ -199,7 +199,7 @@ def plot_agg( aggregated_results, image_name, seed_count, noise_type):
     axarr[1].errorbar(nx,vary,varerr,fmt='r')
     axarr[1].plot(nx,vary, label="variance")
     
-    axarr[2].set_ylabel("avg difference mean squared")
+    axarr[2].set_ylabel("Mean Difference Squared")
     #axarr[2].set_xlabel("noise %")
     axarr[2].set_xscale('log')
     axarr[2].set_title("Mean Avg Diff Mean Squared vs. Noise %")
@@ -207,26 +207,26 @@ def plot_agg( aggregated_results, image_name, seed_count, noise_type):
     axarr[2].errorbar(nx,admsy,admserr,fmt='r')
     axarr[2].plot(nx,admsy, label="adms")
     
-    axarr[3].set_ylabel("sum(abs(diff))")
+    axarr[3].set_ylabel("Sum abs(Diff)")
     #axarr[3].set_xlabel("noise %")
     axarr[3].set_xscale('log')
     axarr[3].set_title("Mean Sum of Diffs vs. Noise %")
-    axarr[3].set_ylim(0,10)
+    axarr[3].set_ylim(0,3)
     axarr[3].errorbar(nx,sady,saderr,fmt='r')
     axarr[3].plot(nx,sady, label="sad")
 
-    axarr[4].set_ylabel("sum(abs(central diff))")
+    axarr[4].set_ylabel("Sum abs(Cent. Diff)")
     axarr[4].set_xlabel("noise %")
     axarr[4].set_xscale('log')
     axarr[4].set_title("Mean Sum of Central Diffs vs. Noise %")
-    axarr[4].set_ylim(0,20)
+    axarr[4].set_ylim(0,3)
     axarr[4].errorbar(nx,sacy,sacerr,fmt='r')
     axarr[4].plot(nx,sacy, label="sac")
     
     if( noise_type == 'u'):
-        plt.savefig("figures/" + image_name + "_uniform_D_V_vs_N.png")
+        plt.savefig("figures/" + image_name + "_uniform_keyComparisonsFig.png")
     else:
-        plt.savefig("figures/" + image_name + "_gaussian_D_V_vs_S.png")
+        plt.savefig("figures/" + image_name + "_gaussian_keyComparisonsFig.png")
     
     plt.show()
         
