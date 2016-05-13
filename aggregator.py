@@ -1,5 +1,9 @@
 # Need to parse .csv log files, process them, and plot results
 # in an organize fashion.
+# TODO:  Add detailed usage to header
+# TODO:  Add acceleration calculations for key exploration  Log V1.01
+# TODO:  Add other key exploration calculations      Log V1.02
+#
 # Thesis work
 # Michael C. Murphy
 # Code started: March 1, 2016
@@ -13,13 +17,21 @@ from statistics import variance
 import time
 
 def main():
+    # USAGE:
+    # python3 aggregator.py (-u or -g) /path/to/datalogs/*
     print( "Detected", len(sys.argv), "arguments")
+
+    if( len(sys.argv) < 3 ):
+        print("Insufficient arguments for aggregator.py")
+        print("USAGE: python3 aggregator.py (-u or -g) /path/to/datalogs/*")
+
+    noise_type = sys.argv[1][1]
 
     # Here is the array of box widths
     d = [3, 5, 10, 20, 30, 50, 100, 150, 300]
 
     F = {}  # Data Dictionary using filenames as keys
-    filelist = sys.argv[1:]  # hold a list of files used
+    filelist = sys.argv[2:]  # hold a list of files used
     for filename in filelist:
         N = {} # Data Dictonary holding Noise data
         file = open(filename, 'r')
@@ -32,7 +44,7 @@ def main():
         F[filename] = N
 
     # Steal image file name from the path:
-    image_name = sys.argv[1].split("/")
+    image_name = sys.argv[2].split("/")
     image_name = image_name[-1].split("_")
     image_name = image_name[0]
 
@@ -72,7 +84,7 @@ def main():
                 R[noisekey] = [ (dim_mean,dsl_var) ]
 
     # Now all the results should be processed;  currently R is an array of tuples (Dim, Var)
-    print("Size of R:", len(R), "# results:",len(R['0.2']))
+    print("Size of R:", len(R)) #, "# results:",len(R['0.2']))
     #print(">>",R['0.2'])
 
     # separate the values and run statistics on them.
@@ -99,7 +111,7 @@ def main():
     #    print(">> ", item)
         
     # TODO: Need to save this data to a file
-    aggregate_datalog( aggregated_results, filelist, image_name )
+    aggregate_datalog( aggregated_results, filelist, image_name , noise_type)
         
     # Attempt to plot:
     nx = []
@@ -115,7 +127,10 @@ def main():
         varerr.append( item[4] )
 
     fig, axarr = plt.subplots(2, sharex=True)
-    fig.suptitle("Box Count Algorithm on " + image_name + " (Uniform Noise, 100 Seeds)", fontsize=14, fontweight='bold')
+    if( noise_type == 'u'):
+        fig.suptitle("Box Count Algorithm on " + image_name + " (Uniform Noise, " + str(len(F)) + " Seeds)", fontsize=14, fontweight='bold')
+    else:
+        fig.suptitle("Box Count Algorithm on " + image_name + " (Gaussian Noise, " + str(len(F)) + " Seeds)", fontsize=14, fontweight='bold')
     axarr[0].set_ylabel("dimension")
     axarr[0].set_xscale('log')
     axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
@@ -130,18 +145,22 @@ def main():
     axarr[1].set_ylim(0,1)
     axarr[1].errorbar(nx,vary,varerr,fmt='r')
     axarr[1].plot(nx,vary, label="variance")
-
-    plt.savefig("figures/" + image_name + "_uniform_D_V_vs_N.png")
-    #plt.show()
+    
+    if( noise_type == 'u'):
+        plt.savefig("figures/" + image_name + "_uniform_D_V_vs_N.png")
+    else:
+        plt.savefig("figures/" + image_name + "_gaussian_D_V_vs_S.png")
+    
+    plt.show()
         
 
 # results_array - an array of tuples of the form (noise, dimension, dimension std err, variance, variance std err)
 # filelist - a list of filenames that were included in the aggregated data
 # Version: V1.00 - initial log format
-def aggregate_datalog( results_array, filelist, image_name ):
+def aggregate_datalog( results_array, filelist, image_name, noise_type ):
     LOG_VERSION = "1.00"
     pathname = "logfiles/"
-    filename = pathname + image_name + "_" + str(len(filelist)) + "_aggregateLog.csv"
+    filename = pathname + image_name + "_" + noise_type + str(len(filelist)) + "_aggregateLog.csv"
 
     log = open(filename, 'w')
     # Write the header
