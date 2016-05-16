@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/norwaymap_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.36049882527,3.57061159398e-17,0.0119487938363,2.09215523085e-19,0.757289087301,1.45056096006e-17,0.350040095361,2.7895403078e-18,0.0104551946068,6.9738507695e-20
+1.0,1.39786343284,1.47757188595e-05,0.0129990193295,9.36997197177e-06,0.720117660948,0.000511642463329,0.322336119786,0.000280781298682,0.0113741419133,8.1987254753e-06
+2.0,1.43857616252,2.11378980897e-05,0.0172023540634,1.97263256e-05,0.75276946724,0.000975457384661,0.359813146826,0.000356133815721,0.0150520598055,1.72605349e-05
+3.0,1.46277031512,2.27757209594e-05,0.0213278382716,1.95977997452e-05,0.880636064092,0.00108316200801,0.423441055437,0.000311114523661,0.0186618584876,1.71480747771e-05
+4.0,1.47818744783,2.06056968214e-05,0.0245469444994,2.10160883904e-05,0.95211761326,0.00100051111113,0.467860321772,0.000375334126763,0.021478576437,1.83890773416e-05
+5.0,1.48942351458,2.24582333919e-05,0.0274372247524,1.9764850352e-05,1.01163279286,0.000970381019487,0.484994696569,0.000340217085847,0.0240075716584,1.7294244058e-05
+6.0,1.49704515518,2.40367034574e-05,0.0299138402589,2.26752796484e-05,1.02870060612,0.00101296331599,0.498363810772,0.000325047598374,0.0261746102265,1.98408696923e-05
+7.0,1.50242280406,2.79560727421e-05,0.0321586144906,2.77595356995e-05,1.0028638028,0.00103049602247,0.530634036115,0.000292449021862,0.0281387876792,2.4289593737e-05
+8.0,1.50716095323,2.93647546035e-05,0.0349779044302,2.7064173165e-05,1.00729629432,0.000920627766358,0.573186526355,0.000280813147381,0.0306056663764,2.36811515194e-05
+9.0,1.51072039079,3.10724413315e-05,0.0377174815197,2.59985764248e-05,1.0062118833,0.000626229769373,0.61556596079,0.000234087280351,0.0330027963297,2.27487543717e-05
+10.0,1.51401173949,3.55198223163e-05,0.041214737604,2.30339184928e-05,1.02751822447,0.000488128791387,0.655283043989,0.000253611507004,0.0360628954035,2.01546786812e-05
+15.0,1.52441613142,5.71013132896e-05,0.0601898701991,2.66170665537e-05,1.14457102398,0.000519102305294,0.811455126389,0.000283300406745,0.0526661364242,2.32899332345e-05
+20.0,1.52450377477,6.30886016153e-05,0.0735397008146,3.05809479886e-05,1.22253591424,0.000540833059401,0.891666863072,0.000402139830623,0.0643472382128,2.675832949e-05
+25.0,1.52738369448,5.41838975233e-05,0.0823716286928,2.69391915771e-05,1.22357416128,0.000484005315024,0.89234724086,0.000378790894003,0.0720751751062,2.35717926299e-05
+30.0,1.53346472193,6.26217971528e-05,0.0942432263657,2.84641951972e-05,1.266233581,0.000810561459501,0.867079369439,0.000351066867558,0.08246282307,2.49061707975e-05
+35.0,1.53293643451,7.33031082927e-05,0.106946591018,3.96039285017e-05,1.32217485169,0.000981682890354,0.879615931567,0.000329956342348,0.0935782671408,3.4653437439e-05
+40.0,1.52994391637,6.4624177315e-05,0.116340657621,4.16764930047e-05,1.30975734447,0.000937631825132,0.897879362757,0.000354445623395,0.101798075418,3.64669313791e-05
+45.0,1.52673110711,5.20046911591e-05,0.125318980819,2.92066723154e-05,1.26989347311,0.000765977936339,0.913791957479,0.000390816039413,0.109654108217,2.5555838276e-05
+50.0,1.52571775677,4.89363970885e-05,0.136490626967,2.40508084208e-05,1.29605450488,0.000816914597472,0.927667737676,0.000395913790788,0.119429298596,2.10444573682e-05
+60.0,1.52418921035,6.64805901378e-05,0.159666713824,3.51532655464e-05,1.32262083135,0.00101640531667,0.938803958283,0.000497074357558,0.139708374596,3.07591073531e-05
+70.0,1.51670103512,7.98370672125e-05,0.179299743671,4.15991741615e-05,1.32431151692,0.000835440894979,0.954868246695,0.000391820041371,0.156887275712,3.63992773913e-05
+80.0,1.50387480666,9.06849410013e-05,0.195187057945,5.33077058734e-05,1.34977348554,0.000640654722781,0.994286530384,0.000308101466325,0.170788675702,4.66442426392e-05
+90.0,1.48972509607,8.37307650474e-05,0.208709366659,4.82183418612e-05,1.40388343553,0.000581476819573,1.04392265875,0.000276289657529,0.182620695827,4.21910491286e-05
+100.0,1.48127032199,6.93823467546e-05,0.223824949175,4.62624551358e-05,1.43010166826,0.00053605349428,1.07442659439,0.00026688598173,0.195846830528,4.04796482438e-05
+150.0,1.45975243804,5.06310625439e-05,0.2983277372,4.72142064473e-05,1.5383706526,0.000462202620487,1.22209048446,0.000203434862577,0.26103677005,4.13124306414e-05
+200.0,1.45117404809,2.58020921176e-05,0.363788337662,3.4943484078e-05,1.65516446636,0.000286031816253,1.38821075492,0.00011952763501,0.318314795454,3.05755485683e-05
+250.0,1.45067744259,3.49231166547e-05,0.419105404716,4.5359048114e-05,1.73104902532,0.000197675629355,1.49456619612,0.000140159917874,0.366717229127,3.96891670998e-05
+500.0,1.46433832709,1.24986446705e-05,0.565696973387,2.14083798179e-05,1.84551747295,3.39815503225e-05,1.68144380313,3.13514500993e-05,0.494984851714,1.87323323407e-05
+750.0,1.47007572466,1.25271273498e-05,0.599583321527,2.08393806067e-05,1.86267237818,3.42781061302e-05,1.71113395983,3.0069398595e-05,0.524635406336,1.82344580309e-05
+1000.0,1.47074732963,1.15545979067e-05,0.603901775639,1.97683138878e-05,1.86558238943,3.2764631988e-05,1.71555989917,2.84915901526e-05,0.528414053684,1.72972746518e-05
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g001-20160516_140906.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g002-20160516_125953.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g003-20160516_133223.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g004-20160516_145642.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g005-20160516_152152.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g006-20160516_154445.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g007-20160516_160834.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g008-20160516_163313.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g009-20160516_165807.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g010-20160516_172205.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g011-20160514_185943.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g012-20160514_185952.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g013-20160514_185952.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g014-20160514_190004.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g015-20160514_190004.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g016-20160514_190006.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g017-20160514_190049.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g018-20160514_190051.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g019-20160514_190110.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g020-20160514_190111.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g021-20160514_190117.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g022-20160514_190153.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g023-20160514_190153.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g024-20160514_190206.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g025-20160514_190329.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g026-20160514_190342.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g027-20160514_190421.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g028-20160514_190458.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g029-20160514_190539.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g030-20160514_190807.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g031-20160514_211346.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g032-20160514_211557.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g033-20160514_211618.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g034-20160514_211622.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g035-20160514_211638.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g036-20160514_211640.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g037-20160514_211653.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g038-20160514_211749.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g039-20160514_211754.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g040-20160514_211801.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g041-20160514_211840.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g042-20160514_211852.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g043-20160514_211906.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g044-20160514_211924.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g045-20160514_211934.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g046-20160514_211942.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g047-20160514_211954.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g048-20160514_212029.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g049-20160514_212030.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g050-20160514_212036.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g051-20160514_212039.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g052-20160514_212127.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g053-20160514_212131.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g054-20160514_212136.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g055-20160514_212141.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g056-20160514_212143.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g057-20160514_212204.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g058-20160514_212219.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g059-20160514_212221.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g060-20160514_212230.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g061-20160514_212239.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g062-20160514_212242.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g063-20160514_212248.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g064-20160514_212255.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g065-20160514_212257.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g066-20160514_212258.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g067-20160514_212310.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g068-20160514_212347.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g069-20160514_212354.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g070-20160514_212401.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g071-20160514_212411.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g072-20160514_212413.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g073-20160514_212418.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g074-20160514_212422.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g075-20160514_212423.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g076-20160514_212423.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g077-20160514_212424.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g078-20160514_212426.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g079-20160514_212431.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g080-20160514_212433.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g081-20160514_212439.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g082-20160514_212442.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g083-20160514_212446.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g084-20160514_212509.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g085-20160514_212541.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g086-20160514_212543.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g087-20160514_212549.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g088-20160514_212557.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g089-20160514_212611.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g090-20160514_212624.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g091-20160514_212624.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g092-20160514_212626.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g093-20160514_212634.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g094-20160514_212647.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g095-20160514_212649.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g096-20160514_212657.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g097-20160514_212701.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g098-20160514_212706.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g099-20160514_212723.csv,,,,,,,,,,
+# logfiles/GaussianLogs/norwaymap/norwaymap_g100-20160514_212729.csv,,,,,,,,,,

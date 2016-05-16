@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/kochSnowflake_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.33845553049,3.57061159398e-17,0.0302285197588,3.83561792322e-19,1.31162592486,2.67795869549e-17,0.481953630217,8.92652898496e-18,0.026449954789,4.1843104617e-19
+1.0,1.37956113393,1.09207881021e-05,0.0129213719202,3.24384697485e-06,0.564161930715,0.000338496583744,0.370695206185,0.000197964817295,0.0113062004301,2.83836610299e-06
+2.0,1.43136789516,2.33956208473e-05,0.00999782294465,1.14806473205e-05,0.527482573916,0.000438760818581,0.427106759503,0.000347625402901,0.00874809507657,1.00455664054e-05
+3.0,1.45838562396,7.16715403592e-05,0.00940150820413,1.75457361505e-05,0.633836832903,0.000679693613651,0.445416667968,0.000376670608036,0.00822631967861,1.53525191317e-05
+4.0,1.468520966,5.96340013965e-05,0.0104113210566,2.33025732241e-05,0.716649440404,0.00105303362597,0.475839051887,0.000530301638293,0.00910990592453,2.03897515711e-05
+5.0,1.48034768965,3.97194597422e-05,0.0134943253872,1.47345037064e-05,0.75445737967,0.000584782513294,0.510180510714,0.000418372813052,0.0118075347138,1.28926907431e-05
+6.0,1.49267441851,3.57051162588e-05,0.0185780808514,1.7174892763e-05,0.822901863744,0.000593579683372,0.543508830489,0.000451573503427,0.016255820745,1.50280311677e-05
+7.0,1.50331592369,4.74114033972e-05,0.0259884442298,2.27911529916e-05,0.955236736053,0.000852653591395,0.597892700119,0.000531882483332,0.0227398887011,1.99422588676e-05
+8.0,1.51024863295,6.21049509314e-05,0.0344435631404,3.01709798398e-05,1.10336476013,0.00117771521817,0.661214472377,0.000592088803489,0.0301381177478,2.63996073599e-05
+9.0,1.51200621334,9.09662885154e-05,0.0413685166347,3.38944257437e-05,1.18850898469,0.00104845677195,0.69742133194,0.000577524679378,0.0361974520553,2.96576225257e-05
+10.0,1.51222140192,9.86023778838e-05,0.0477651553752,3.18659301737e-05,1.25522813546,0.000792951673264,0.70667116964,0.000516066143603,0.0417945109533,2.7882688902e-05
+15.0,1.51174756436,6.38062202933e-05,0.0832387431929,3.27279536007e-05,1.44769437535,0.00123131300811,0.718332326343,0.000394483915034,0.0728339002938,2.86369594006e-05
+20.0,1.48080393623,0.000102894554052,0.112897737788,3.21925293771e-05,1.45823339858,0.00109412761178,0.892264416656,0.000316688607667,0.0987855205641,2.8168463205e-05
+25.0,1.45713348509,6.48617790736e-05,0.135118825621,2.58300163905e-05,1.43835844623,0.000402006202285,1.03274337001,0.000277097356405,0.118228972419,2.26012643417e-05
+30.0,1.45019227454,5.23144117767e-05,0.157275727461,2.45127699047e-05,1.48346480122,0.000394557293241,1.09447442092,0.000309183904274,0.137616261528,2.14486736666e-05
+35.0,1.4507766327,3.44874233182e-05,0.179016613367,2.48722811092e-05,1.51642453632,0.00039790756286,1.12357178229,0.000294166603935,0.156639536696,2.17632459705e-05
+40.0,1.45313903966,2.59202401569e-05,0.200027542918,2.28200403211e-05,1.5286918452,0.000498364217603,1.14471741573,0.000281532448971,0.175024100054,1.9967535281e-05
+45.0,1.45574768234,3.04423513814e-05,0.220780797342,2.2798689001e-05,1.53551015844,0.000456559056325,1.16895666506,0.000353526294193,0.193183197674,1.99488528758e-05
+50.0,1.45771935464,3.5918726918e-05,0.240659206124,2.5603221344e-05,1.55033002072,0.000394195841866,1.18868735837,0.000314514955924,0.210576805358,2.2402818676e-05
+60.0,1.4584716605,4.86554398926e-05,0.276708370196,3.90303807349e-05,1.61700386777,0.000658145622213,1.2279654158,0.000240062590091,0.242119823922,3.4151583143e-05
+70.0,1.45476150983,4.52544276404e-05,0.305168105419,4.27696117252e-05,1.62262777238,0.000788423342573,1.26353574619,0.000298326501612,0.267022092241,3.74234102596e-05
+80.0,1.44565017092,5.21303331285e-05,0.325719045358,4.43046983884e-05,1.63760843737,0.000741457181897,1.29607023568,0.000259512024067,0.285004164688,3.87666110898e-05
+90.0,1.44117289624,3.80073618552e-05,0.346985155044,3.52908939178e-05,1.67161186695,0.000890860598306,1.32111944368,0.000222271942203,0.303612010663,3.08795321781e-05
+100.0,1.44264398323,2.38312088746e-05,0.370427926859,2.82625880489e-05,1.64912429666,0.000521246116259,1.35504998169,0.000123247003839,0.324124436002,2.47297645428e-05
+150.0,1.45046604167,1.60441350588e-05,0.467037673087,2.5284670778e-05,1.78301637395,0.00017179361914,1.56556948769,7.32141739412e-05,0.408657963951,2.21240869308e-05
+200.0,1.45786895257,1.32791754057e-05,0.528385214844,1.90895699468e-05,1.82715303729,4.7765914295e-05,1.64812456507,3.29943460948e-05,0.462337062988,1.67033737034e-05
+250.0,1.46255210523,1.21598886748e-05,0.562986380256,1.82453182859e-05,1.84440443542,3.23178884825e-05,1.67999539211,2.6305116466e-05,0.492613082724,1.59646535001e-05
+500.0,1.46909503678,1.19009201592e-05,0.602823975679,1.9272876304e-05,1.86485776071,3.30919574452e-05,1.71495973611,2.76060924974e-05,0.527470978719,1.6863766766e-05
+750.0,1.4695241912,1.18206853724e-05,0.605437891764,1.98478994012e-05,1.86679561869,3.35816630092e-05,1.71769499924,2.95129434418e-05,0.529758155293,1.73669119761e-05
+1000.0,1.46954253596,1.14574231709e-05,0.605557616686,1.9718075552e-05,1.86677088992,3.34974166277e-05,1.71782690744,2.86747138781e-05,0.5298629146,1.7253316108e-05
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g001-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g002-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g003-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g004-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g005-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g006-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g007-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g008-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g009-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g010-20160511_235414.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g011-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g012-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g013-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g014-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g015-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g016-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g017-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g018-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g019-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g020-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g021-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g022-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g023-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g024-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g025-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g026-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g027-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g028-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g029-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g030-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g031-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g032-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g033-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g034-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g035-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g036-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g037-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g038-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g039-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g040-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g041-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g042-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g043-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g044-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g045-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g046-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g047-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g048-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g049-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g050-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g051-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g052-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g053-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g054-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g055-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g056-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g057-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g058-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g059-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g060-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g061-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g062-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g063-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g064-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g065-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g066-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g067-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g068-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g069-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g070-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g071-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g072-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g073-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g074-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g075-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g076-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g077-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g078-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g079-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g080-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g081-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g082-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g083-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g084-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g085-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g086-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g087-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g088-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g089-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g090-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g091-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g092-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g093-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g094-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g095-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g096-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g097-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g098-20160514_163016.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g099-20160514_163015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/kochSnowflake/kochSnowflake_g100-20160514_163016.csv,,,,,,,,,,

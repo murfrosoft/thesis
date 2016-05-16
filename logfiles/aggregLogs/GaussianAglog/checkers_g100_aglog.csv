@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/checkers_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.94704496639,4.24010126786e-17,0.384472456692,1.11581612312e-18,5.40205312691,8.92652898496e-17,1.51874981947,1.33897934774e-17,0.336413399605,2.23163224624e-18
+1.0,1.84689410606,5.24197094572e-07,0.0235711315003,1.7579880563e-07,0.914556840107,1.80354646353e-05,0.618657875031,3.14716879962e-06,0.0206247400628,1.53823954926e-07
+2.0,1.85192587832,5.75423539053e-07,0.0240308575169,9.9477968508e-08,0.911826742667,8.105938039e-06,0.636881014668,2.29623100759e-06,0.0210270003273,8.70432224445e-08
+3.0,1.85767641013,8.60315124896e-07,0.0243095589889,8.46840617968e-07,0.86115419716,1.96164190841e-05,0.657050798173,9.64176097082e-06,0.0212708641153,7.40985540722e-07
+4.0,1.86517456586,2.39784162808e-06,0.0198929505478,3.53262234852e-06,0.778484489419,9.81603126483e-05,0.61274155337,4.57954479638e-05,0.0174063317293,3.09104455496e-06
+5.0,1.87784945434,2.68601466501e-06,0.0106533278684,1.8118338688e-06,0.5131272094,2.4840164339e-05,0.446228989243,5.32073017157e-05,0.00932166188487,1.5853546352e-06
+6.0,1.88830561463,1.74693219638e-06,0.00765794466353,2.23998268301e-07,0.462629374831,1.72246586471e-05,0.313399732794,3.18552095177e-05,0.00670070158059,1.95998484763e-07
+7.0,1.89490138847,1.51526983695e-06,0.00738735858617,6.39792289507e-08,0.484281929502,6.04943778856e-05,0.281436580517,1.9256383743e-05,0.0064639387629,5.59818253319e-08
+8.0,1.90154690612,2.31336099702e-06,0.00766253394318,7.91302198243e-07,0.590200095163,0.000109858331536,0.329915121242,3.64990093881e-05,0.00670471720028,6.92389423462e-07
+9.0,1.90876633668,2.29936470851e-06,0.00815098285505,2.30516003628e-06,0.694749635885,0.000146597961899,0.369620865871,6.55003724422e-05,0.00713210999817,2.01701503175e-06
+10.0,1.91475704693,2.05194204504e-06,0.00677226543262,3.67176330043e-06,0.636509872289,0.000212342643722,0.352453047762,0.00011311556353,0.00592573225354,3.21279288787e-06
+15.0,1.93383963542,2.77769765801e-06,0.00514621079771,2.25882290293e-06,0.511489587472,0.000238505893357,0.210832976449,8.57078428663e-05,0.004502934448,1.97647004006e-06
+20.0,1.95133529631,1.78270994014e-06,0.00334029402527,4.50834803796e-07,0.181741249611,9.65320635984e-05,0.131110037857,6.44512366566e-06,0.00292275727211,3.94480453321e-07
+25.0,1.96524672654,1.07633645327e-06,0.00318392258692,3.18707078324e-07,0.15719671086,1.06683203194e-05,0.118292705336,4.81965038378e-06,0.00278593226355,2.78868693534e-07
+30.0,1.97533490343,8.25960554321e-07,0.00239005200891,2.49542450211e-07,0.140930816093,1.63950764497e-05,0.0940782042552,7.32243442184e-06,0.00209129550779,2.18349643935e-07
+35.0,1.98317506147,8.02746034176e-07,0.00144122510768,1.68486463848e-07,0.109927039878,1.25178444799e-05,0.0653428842417,4.01419142727e-06,0.00126107196922,1.47425655867e-07
+40.0,1.98904155605,6.62400648905e-07,0.000717333321435,1.0460184707e-07,0.0772529351086,8.48907144501e-06,0.0427212504808,2.82104339507e-06,0.000627666656256,9.15266161866e-08
+45.0,1.99300387343,4.96219468184e-07,0.000317714477696,5.83029145114e-08,0.051096290746,5.50488939975e-06,0.0273977417584,2.26993402155e-06,0.000278000167984,5.10150501975e-08
+50.0,1.99548114898,4.73930900184e-07,0.000137939478483,3.22286752046e-08,0.0335308441859,3.88178953926e-06,0.0178271659091,1.88738863933e-06,0.000120697043673,2.8200090804e-08
+60.0,1.9979096749,2.97249023786e-07,3.09888277779e-05,9.49712311034e-09,0.0158466014335,2.40053752591e-06,0.00834278918762,1.18039272188e-06,2.71152243057e-05,8.30998272155e-09
+70.0,1.99883417769,2.07090092311e-07,1.02313443931e-05,3.83230498281e-09,0.00907761477614,1.6848783503e-06,0.00466309841848,8.29453803916e-07,8.95242634392e-06,3.35326685996e-09
+80.0,1.99921490088,1.99131507993e-07,4.83592622007e-06,2.44594615539e-09,0.00622554558652,1.5744495318e-06,0.00314039646623,7.96526031972e-07,4.23143544256e-06,2.14020288596e-09
+90.0,1.99937658356,1.87718575293e-07,3.09575414726e-06,1.84707717674e-09,0.00497597689242,1.47982397804e-06,0.00249366575796,7.50874301172e-07,2.70878487886e-06,1.61619252965e-09
+100.0,1.99944620772,1.84829470883e-07,2.45399876227e-06,1.64142374465e-09,0.00442862074484,1.47313215512e-06,0.00221516912263,7.39317883532e-07,2.14724891699e-06,1.43624577657e-09
+150.0,1.99950780545,1.64013717962e-07,1.94017429366e-06,1.30081925286e-09,0.00393755637327,1.31210974369e-06,0.00196877818664,6.56054871846e-07,1.69765250695e-06,1.13821684625e-09
+200.0,1.99951371924,1.65036875483e-07,1.89390904306e-06,1.29330044078e-09,0.0038902461199,1.32029500387e-06,0.00194512305995,6.60147501933e-07,1.65717041267e-06,1.13163788568e-09
+250.0,1.99951541803,1.66191283597e-07,1.88074496428e-06,1.29878229208e-09,0.00387665577166,1.32953026877e-06,0.00193832788583,6.64765134386e-07,1.64565184374e-06,1.13643450557e-09
+500.0,1.99951810923,1.66026475095e-07,1.85993281713e-06,1.28679192157e-09,0.003855126131,1.32821180076e-06,0.0019275630655,6.64105900378e-07,1.62744121499e-06,1.12594293137e-09
+750.0,1.99951866965,1.66371776324e-07,1.85562345428e-06,1.28906513432e-09,0.00385064278531,1.33097421059e-06,0.00192532139265,6.65487105295e-07,1.6236705225e-06,1.12793199253e-09
+1000.0,1.99951854707,1.64625122832e-07,1.85652181108e-06,1.27473182063e-09,0.00385162342681,1.31700098265e-06,0.0019258117134,6.58500491326e-07,1.62445658469e-06,1.11539034305e-09
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g001-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g002-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g003-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g004-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g005-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g006-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g007-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g008-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g009-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g010-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g011-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g012-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g013-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g014-20160512_182520.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g015-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g016-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g017-20160512_182520.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g018-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g019-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g020-20160512_182521.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g021-20160512_202027.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g022-20160512_202031.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g023-20160512_202041.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g024-20160512_202111.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g025-20160512_202247.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g026-20160512_202247.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g027-20160512_202329.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g028-20160512_202506.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g029-20160512_202507.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g030-20160512_202807.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g031-20160512_203259.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g032-20160512_203324.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g033-20160512_203352.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g034-20160512_203444.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g035-20160512_203457.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g036-20160512_203518.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g037-20160512_203545.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g038-20160512_203607.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g039-20160512_203619.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g040-20160512_203622.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g041-20160512_203628.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g042-20160512_203628.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g043-20160512_203633.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g044-20160512_203642.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g045-20160512_203643.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g046-20160512_203648.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g047-20160512_203709.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g048-20160512_203711.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g049-20160512_203716.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g050-20160512_203717.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g051-20160512_203719.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g052-20160512_203723.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g053-20160512_203729.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g054-20160512_203735.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g055-20160512_203739.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g056-20160512_203739.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g057-20160512_203747.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g058-20160512_203805.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g059-20160512_203813.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g060-20160512_203815.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g061-20160512_203817.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g062-20160512_203819.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g063-20160512_203830.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g064-20160512_203832.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g065-20160512_203836.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g066-20160512_203842.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g067-20160512_203850.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g068-20160512_203850.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g069-20160512_203858.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g070-20160512_203901.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g071-20160512_203906.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g072-20160512_203913.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g073-20160512_203917.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g074-20160512_203923.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g075-20160512_203923.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g076-20160512_203924.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g077-20160512_203926.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g078-20160512_203927.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g079-20160512_203930.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g080-20160512_203932.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g081-20160512_203935.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g082-20160512_203950.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g083-20160512_203954.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g084-20160512_203957.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g085-20160512_203959.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g086-20160512_204013.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g087-20160512_204018.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g088-20160512_204018.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g089-20160512_204021.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g090-20160512_204023.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g091-20160512_204026.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g092-20160512_204027.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g093-20160512_204055.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g094-20160512_204101.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g095-20160512_204127.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g096-20160512_204140.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g097-20160512_204143.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g098-20160512_204155.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g099-20160512_204221.csv,,,,,,,,,,
+# logfiles/GaussianLogs/checkers/checkers_g100-20160512_204223.csv,,,,,,,,,,

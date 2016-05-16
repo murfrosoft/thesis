@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/koch3lines_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.2634978471,2.23163224624e-18,0.0188764921114,4.1843104617e-19,0.722524044606,2.23163224624e-18,0.302291368081,2.7895403078e-18,0.0165169305974,2.09215523085e-19
+1.0,1.30398971597,3.09498375206e-05,0.0108501465378,9.05595924286e-06,0.417568215661,0.000319785024336,0.253484740659,0.000155220595033,0.00949387822056,7.9239643375e-06
+2.0,1.35045846373,2.15613384124e-05,0.00685103430125,6.71475798219e-06,0.465642777005,0.000325345389074,0.303966540499,0.000182020419725,0.00599465501359,5.87541323442e-06
+3.0,1.38028435895,2.44302002372e-05,0.00854672252177,1.01958413867e-05,0.631286406446,0.00044760650802,0.375172966746,0.000245589496207,0.00747838220655,8.92136121336e-06
+4.0,1.40002775437,3.90389319962e-05,0.0134528815782,1.52442168288e-05,0.72960284348,0.000620984772677,0.43619745929,0.000399365491037,0.0117712713809,1.33386897252e-05
+5.0,1.41258108624,3.98607328045e-05,0.0192543852396,1.30821120968e-05,0.798368317911,0.000512979837418,0.466601031249,0.000393270791309,0.0168475870847,1.14468480847e-05
+6.0,1.4238630889,3.58739792072e-05,0.0259784218651,1.37903557269e-05,0.851106531557,0.000391690194304,0.510403825106,0.000448795020033,0.022731119132,1.2066561261e-05
+7.0,1.4340407824,3.03912400932e-05,0.0337550789993,1.3241122932e-05,0.898623899316,0.000337083753216,0.563027103727,0.000460846650931,0.0295356941244,1.15859825655e-05
+8.0,1.44349390505,2.97265363893e-05,0.0428571129886,1.39869835435e-05,0.947212624585,0.000289512712601,0.623521652519,0.000462763090548,0.037499973865,1.22386106005e-05
+9.0,1.45094727203,2.49609242434e-05,0.0521514676401,1.57304822631e-05,0.969773390257,0.000319529356163,0.666030366764,0.000385861027974,0.0456325341851,1.37641719802e-05
+10.0,1.45677325647,2.72948754829e-05,0.0614051890263,1.51754585914e-05,0.986417317786,0.000418333752253,0.68597150084,0.000347955955569,0.053729540398,1.32785262675e-05
+15.0,1.47310669118,3.69440062263e-05,0.10738856777,2.30945469325e-05,1.17553778037,0.000877657537093,0.754121771556,0.000268350539354,0.0939649967986,2.02077285659e-05
+20.0,1.4706207622,5.03495927403e-05,0.143681670171,2.64190893478e-05,1.22998810143,0.000776603654655,0.848968293566,0.000244952667104,0.1257214614,2.31167031794e-05
+25.0,1.46988379345,4.03612319144e-05,0.176021407723,2.83276094892e-05,1.30870082032,0.000727962144531,0.916595925723,0.00017746869158,0.154018731758,2.4786658303e-05
+30.0,1.47018713409,3.6874482371e-05,0.20433730424,2.89710906213e-05,1.34305585876,0.000589260107128,0.988569517165,0.000200076693821,0.17879514121,2.53497042937e-05
+35.0,1.47037311482,2.21660419892e-05,0.229430901197,2.30644573393e-05,1.39908346686,0.000589686987399,1.06588725348,0.000217229360908,0.200752038547,2.01814001719e-05
+40.0,1.47166545777,1.71928173864e-05,0.252747252239,2.03877355839e-05,1.49319537698,0.00074482062599,1.12813593476,0.000228704445641,0.221153845709,1.78392686359e-05
+45.0,1.47382392824,1.86954618586e-05,0.274354808512,1.97509639491e-05,1.55187409363,0.000800162763602,1.17000090371,0.000190612858645,0.240060457448,1.72820934555e-05
+50.0,1.47663321171,2.05706852703e-05,0.294406933593,1.8787588912e-05,1.56096183021,0.000701638220434,1.20183881531,0.000151421468251,0.257606066894,1.6439140298e-05
+60.0,1.48178490938,2.09006695906e-05,0.330029119097,2.61459145887e-05,1.57587486319,0.000379880674949,1.27871572186,0.000105488781702,0.28877547921,2.28776752651e-05
+70.0,1.48385628586,3.04588396048e-05,0.358269708808,3.56609600558e-05,1.6427689515,0.000471967999316,1.34595483439,0.000126449865913,0.313485995207,3.12033400489e-05
+80.0,1.48097806266,3.85181969674e-05,0.377656692094,3.90703957877e-05,1.66647185496,0.000383742846206,1.38128423482,0.000136255827541,0.330449605582,3.41865963142e-05
+90.0,1.47943759648,2.31292550647e-05,0.394997458832,2.96710076885e-05,1.67830950933,0.000251986966465,1.41210764193,0.000107595940301,0.345622776478,2.59621317275e-05
+100.0,1.48073084437,1.60530194471e-05,0.412703109532,2.37518829581e-05,1.7021595303,0.00025665814049,1.44713635777,8.89131983103e-05,0.361115220841,2.07828975883e-05
+150.0,1.48768416149,1.31801467996e-05,0.478756493301,2.0586477123e-05,1.78211868595,0.000134885418377,1.55849221532,5.27536925069e-05,0.418911931638,1.80131674826e-05
+200.0,1.49336407967,1.16349865409e-05,0.519418036151,1.89247018418e-05,1.80769651504,3.39588142372e-05,1.61368108948,3.08643944836e-05,0.454490781633,1.65591141116e-05
+250.0,1.49655295794,1.173028848e-05,0.542896028218,1.73018255881e-05,1.82264585933,3.16729581081e-05,1.63830941578,2.70681752943e-05,0.47503402469,1.51390973896e-05
+500.0,1.50123580931,1.05977494271e-05,0.572503271287,1.84557005008e-05,1.84088368998,3.18661019229e-05,1.66775652321,2.689880663e-05,0.500940362376,1.61487379382e-05
+750.0,1.50150664398,1.03076811727e-05,0.57467592539,1.7943296819e-05,1.84237438864,3.16535240476e-05,1.67031106566,2.62895085808e-05,0.502841434716,1.57003847166e-05
+1000.0,1.50154620009,1.02350552348e-05,0.574807648103,1.73950153962e-05,1.8424761106,3.22559350309e-05,1.67045252651,2.62803330138e-05,0.50295669209,1.52206384717e-05
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g001-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g002-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g003-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g004-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g005-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g006-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g007-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g008-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g009-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g010-20160512_012028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g011-20160513_010606.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g012-20160513_010615.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g013-20160513_010626.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g014-20160513_010633.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g015-20160513_010636.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g016-20160513_010638.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g017-20160513_010721.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g018-20160513_010732.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g019-20160513_010733.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g020-20160513_010745.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g021-20160513_010806.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g022-20160513_010835.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g023-20160513_010934.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g024-20160513_010936.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g025-20160513_011104.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g026-20160513_011226.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g027-20160513_011318.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g028-20160513_011330.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g029-20160513_011332.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g030-20160513_011440.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g031-20160513_011458.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g032-20160513_011500.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g033-20160513_011509.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g034-20160513_011556.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g035-20160513_011626.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g036-20160513_011645.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g037-20160513_011709.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g038-20160513_011748.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g039-20160513_011803.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g040-20160513_011817.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g041-20160513_011840.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g042-20160513_011950.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g043-20160513_012006.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g044-20160513_012012.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g045-20160513_012026.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g046-20160513_012115.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g047-20160513_012409.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g048-20160513_012647.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g049-20160513_012747.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g050-20160513_013019.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g051-20160513_023728.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g052-20160513_024504.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g053-20160513_024624.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g054-20160513_024713.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g055-20160513_024852.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g056-20160513_025143.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g057-20160513_025158.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g058-20160513_025448.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g059-20160513_025456.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g060-20160513_025649.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g061-20160513_025718.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g062-20160513_025730.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g063-20160513_025738.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g064-20160513_025752.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g065-20160513_025907.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g066-20160513_025930.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g067-20160513_025947.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g068-20160513_025952.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g069-20160513_030032.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g070-20160513_030159.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g071-20160513_030211.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g072-20160513_030356.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g073-20160513_030428.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g074-20160513_030440.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g075-20160513_030501.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g076-20160513_030504.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g077-20160513_030523.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g078-20160513_030533.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g079-20160513_030541.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g080-20160513_030632.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g081-20160513_030654.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g082-20160513_030804.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g083-20160513_030823.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g084-20160513_030830.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g085-20160513_030833.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g086-20160513_030837.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g087-20160513_030856.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g088-20160513_030947.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g089-20160513_030954.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g090-20160513_031001.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g091-20160513_031006.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g092-20160513_031015.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g093-20160513_031020.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g094-20160513_031026.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g095-20160513_031031.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g096-20160513_031106.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g097-20160513_031125.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g098-20160513_031129.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g099-20160513_031129.csv,,,,,,,,,,
+# logfiles/GaussianLogs/koch3lines/koch3lines_g100-20160513_031145.csv,,,,,,,,,,
