@@ -27,10 +27,20 @@ import time
 from random import randint
 from scipy import ndimage
 
-PREVIEW = False
+PREVIEW = True
 
 def main():
     print( "Detected", len(sys.argv), "arguments")
+    # USAGE:
+    # python3 figure_creator.py (-code) (optional aguments) /path/to/aggregate/logsfiles.csv
+    # CODE LIST:
+    #   -u (Uniform Noise Plot 2x2) -u n1 n2 n3 imagename.png
+    #   -g (Gaussian Noise Plot 2x2) -g 10 100 imagename.png
+    #   -v (Uniform Noise Dim vs. Slope Variance 1x2)  -v aggregate/logfile.csv
+    # **-j (Gaussian Noise Dim vs. Slope Variance 1x2) -j aggregate/logfile.csv
+    # **-m (Multiple Uniform Dim vs. Slope Variance 1x2)  -m aggregate/logfile/* (up to n?)
+    # **-n (Multiple Gaussian Dim vs. Slope Variance 1x2) -n aggregate/logfile/* (up to n?)
+    # **-k (Plot all Dimension vs. All keys 1x4?) -k aggregate/logfile.csv
 
     if len(sys.argv) < 3:
         print("Insufficient Arguments")
@@ -103,9 +113,117 @@ def main():
         if( PREVIEW ):
             plt.show()
     # ================================================================================
+    # Plot Multiple Uniform Noise Div vs. Slope Variance Plots
+    # python3 figure_creator.py -m path/to/aggregate/logs*
+    # ================================================================================# #
+    elif sys.argv[1][1] == "m":
+        if( len(sys.argv) < 3 ):
+            print("-m too few arguments")
+            return
+
+        # count the number of files to plot:
+        plotcount = len(sys.argv) - 2
+        print("Adding", plotcount, "plots to Figure")
+
+        # Create the figure shell before we start parsing data and adding to plot
+        fig, axarr = plt.subplots(2, sharex=True)
+        fig.suptitle("Box Count Algorithm on " + str(plotcount) + " images (Uniform)", fontsize=14, fontweight='bold')
+        fig.set_size_inches(10,10,forward=True)  # try to set size of plot??
+
+        # Add Marker styles/colors to plots
+        color_idx = 0
+        color_m = ("#ff0000","#ff9900","#33cc33","#339933","#0066ff","#ff00ff","9900cc","#996633","#000000")
+        marker_m = ('o','d','*','o','d','*','o','d','*')
+        marker_m = ('.','x','4','.','x','4','.','x','4')
+
+        label_count = 0  # adding a number while trying to get labels to work
+        for filename in sys.argv[2:]:
+            print("> Reading File",filename)
+            
+            file = open( filename, 'r' )
+            image_name = filename.split('/')
+            image_name = image_name[-1].split('_')
+            image_name = image_name[0]
+
+            '''
+            # Parse an aggregated log file
+            filename = sys.argv[2]
+            file = open( filename, 'r' )
+            image_name = filename.split('/')
+            image_name = image_name[-1].split('_')
+            image_name = image_name[0]
+            '''
+        
+            # Preparing to plot Dimension vs. Uniform Noise and Slope Variance vs. Uniform Noise
+            d = []
+            sv = []
+            un = []
+            AXIS_GRAY = '0.8'
+            for line in file:
+                if( line[0] != "#" ):
+                    line = line.strip()
+                    data = line.split(',')
+                    d.append(float(data[1]))
+                    sv.append(float(data[3]))
+                    un.append(float(data[0]))
+
+            # Find some statistics about the data
+            idx1 = sv.index(max(sv))
+            vert_bar = un[idx1]     # grab noise value where max slope variance occurs
+            horiz_bar = d[0]        # grab initial dimension value to project horizontally
+
+
+
+            # set up gridlines for 1st plot
+            axarr[0].grid(b=True, which='major', color=AXIS_GRAY, linestyle='-')
+            
+            axarr[0].set_ylabel("Fractal Dimension")
+            axarr[0].set_xscale('log')
+            axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
+            axarr[0].set_ylim(0,2)
+            #axarr[0].errorbar(nx,dimy,dimerr,fmt='r')
+            ## Plot a vertical bar at slope variance max
+            ##axarr[0].plot((vert_bar,vert_bar),(0,2),'r--')
+            ## Plot a horizontal bar at initial dimension value
+            ##axarr[0].plot((un[1],100),(horiz_bar,horiz_bar),'g--')
+            ## Annotate some text highlighting original dimension
+            ##axarr[0].text(.001, d[0]+0.02, "Dimension = " + format(d[0], '.2f'), color='g')
+            axarr[0].plot(un, d, color=color_m[color_idx], marker=marker_m[color_idx], label=image_name)
+        
+            # set up gridlines for 2nd plot
+            axarr[1].grid(b=True, which='major', color=AXIS_GRAY, linestyle='-')
+            
+            axarr[1].set_ylabel("Slope Variance")
+            axarr[1].set_xlabel("% Uniform Noise")
+            axarr[1].set_xscale('log')
+            axarr[1].set_title("Mean Slope Variance vs. Noise %")
+            axarr[1].set_ylim(0,1)
+            #axarr[1].errorbar(nx,vary,varerr,fmt='r')
+            ## Plot a vertical bar at slope variance max
+            ##axarr[1].plot((vert_bar,vert_bar),(0,2),'r--')
+            ## Annotate some text highlighting where maximum slope variance occurs
+            ##axarr[1].text(vert_bar+.1, .8, str(vert_bar) + "% Noise", color='r')
+            axarr[1].plot(un,sv, color=color_m[color_idx], marker=marker_m[color_idx], label="V"+str(label_count))
+            color_idx += 1
+            if color_idx >= len(color_m):
+                color_idx = 1
+
+
+        # temporary vertical bars:  0.003% noise, and 0.3% noise
+        ## Plot a vertical bar at slope variance max
+        axarr[0].plot((0.003,0.003),(0,2),'r--')
+        axarr[0].plot((0.3,0.3),(0,2),'r--')
+        axarr[1].plot((0.003,0.003),(0,2),'r--')
+        axarr[1].plot((0.3,0.3),(0,2),'r--')
+
+        axarr[0].legend(loc=0, ncol=2) # , borderaxespad=0.
+        plt.savefig("Figure_DvsSV_Uniform_BIG"+image_name+".png")
+        if( PREVIEW ):
+            plt.show()
+    # ================================================================================
     # Uniform Noise Examples
     # python3 figure_creator.py -u 1 10 50 imagename.png
-    # ================================================================================# Uniform Noise Examples
+    # ================================================================================# 
     elif sys.argv[1][1] == "u":
         if( len(sys.argv) != 6 ):
             print("-u not enough arguments")

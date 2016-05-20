@@ -24,6 +24,7 @@ def main():
     if( len(sys.argv) < 3 ):
         print("Insufficient arguments for aggregator.py")
         print("USAGE: python3 aggregator.py (-u or -g) /path/to/datalogs/*")
+        return
 
     noise_type = sys.argv[1][1]
 

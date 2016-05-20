@@ -384,25 +384,32 @@ def gaussian_noise_generator( maximum ):
 
 def main():
     # To Run, enter as arguments:
-    # (1) Path to Image
-    # (2) Noise Model: (-u) uniform (-g) gaussian
-    # (3) Noise Seed: (1-1000)
-    if( len(sys.argv) != 4 ):
-        sys.exit("[ERROR] Insufficient Arguments. [Image Path] [Noise Model] [Seed]")
+    # (1) Noise Model: (-u) uniform (-g) gaussian
+    # (2) Noise Seed: (1-1000)
+    # (3) Path to Image
+    if( len(sys.argv) != 4 ):                     # argv[1]     argv[2]  argv[3]
+        sys.exit("[ERROR] Insufficient Arguments. [Noise Model] [Seed] [Image Path] ")
 
-    if( sys.argv[2] == "-u" ):
+    if( sys.argv[1][1] == "u" ):
         NOISE_MODEL = "uniform"
-    elif( sys.argv[2] == "-g" ):
+    elif( sys.argv[1][1] == "g" ):
         NOISE_MODEL = "gaussian"
     else:
         sys.exit("[ERROR] Noise Model: -u (uniform) or -g (gaussian)")
 
     try:
-        SEED = int(sys.argv[3])
+        SEED = int(sys.argv[2])
     except:
         sys.exit("[ERROR] Invalid SEED Argument")
 
-    image = sys.argv[1]
+    image = sys.argv[3]
+
+    # Modification to allow noise to be pre-injected into the image before processing
+    # Pre-injected noise is added to Noise Model Parameter usch as: -u10 (10% noise) or -u(.1) (0.1% noise)
+    pre_noise = False
+    if ( len(sys.argv[1]) > 2 ):
+        pre_noise = float(sys.argv[1][2:])
+        print(">> Detected", pre_noise, "% noise to be initially added.")
 
     print("@=========================================@")
     print("| Simulation Setup")
@@ -433,8 +440,12 @@ def main():
         # Gaussian requires more information to apply filter
         img = get_rgb2_from(image)
 
-
-        
+    # Preinject Noise if required...
+    if( pre_noise ):
+        print(">> Injecting Prenoise of",pre_noise,"%...")
+        img = addUniformNoise( img, pre_noise, 999 )
+        logName = 'P' + str(pre_noise) + logName
+                
     print("Image imported")
     print("---", timeit(time.time()-start_time), "---")
     print("Array is",len(img),"x",len(img[0]))
