@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/20_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.57583863856,2.23163224624e-17,0.0306969758806,3.48692538475e-19,0.597679398812,8.92652898496e-18,0.504171804534,8.92652898496e-18,0.0268598538955,3.83561792322e-19
+1.0,1.5976427031,1.69922914535e-05,0.0258801573968,9.57247543342e-06,0.5714644682,0.000127195950377,0.483380265349,9.73414452098e-05,0.0226451377222,8.37591600424e-06
+2.0,1.63033944252,1.93887566168e-05,0.019919552224,1.00343677552e-05,0.495723006741,0.000146119175701,0.423049369469,0.000108096805272,0.017429608196,8.78007178576e-06
+3.0,1.65508675791,2.03941942394e-05,0.0163812267694,9.64148366197e-06,0.426864098239,0.0002146422953,0.347424673878,0.000102708268874,0.0143335734232,8.43629820422e-06
+4.0,1.67360647403,2.05082422794e-05,0.0150705855135,9.84489527363e-06,0.414936254165,0.000238949393358,0.306249837062,0.000138930117003,0.0131867623243,8.61428336442e-06
+5.0,1.68801970055,2.02541144922e-05,0.0147433137821,9.91983727226e-06,0.398449693941,0.00024586331394,0.308795982735,0.000159592341348,0.0129003995594,8.67985761322e-06
+6.0,1.70010811783,2.16754588137e-05,0.0151681316033,9.88617732557e-06,0.411666903773,0.000241748916657,0.30621940316,0.000131392652388,0.0132721151529,8.65040515987e-06
+7.0,1.7101405653,2.07349481475e-05,0.0162141931129,9.77202379707e-06,0.431124344966,0.000238569035137,0.322074222592,0.000135301769139,0.0141874189738,8.55052082244e-06
+8.0,1.71877650144,2.06939771462e-05,0.0176836436995,8.82422020299e-06,0.449915073536,0.0002709106496,0.336378912435,0.000135421901185,0.0154731882371,7.72119267762e-06
+9.0,1.7260872247,2.09272593034e-05,0.0193462312872,9.16814036042e-06,0.471236802444,0.000286706589369,0.348331678488,0.000130613017828,0.0169279523763,8.02212281537e-06
+10.0,1.7325335872,2.1176084296e-05,0.0211724553393,8.18132111243e-06,0.495479673954,0.000313229957085,0.359651286357,0.000111590244449,0.0185258984219,7.15865597337e-06
+15.0,1.75539222244,2.07492934675e-05,0.0301716214012,8.3127853983e-06,0.536863993278,0.000160635463017,0.408053253628,9.36085097418e-05,0.0264001687261,7.27368722352e-06
+20.0,1.76938123966,1.35644911294e-05,0.0383068038436,5.0381078114e-06,0.596727855194,0.000155579735097,0.446551939935,6.05359444256e-05,0.0335184533631,4.40834433498e-06
+25.0,1.77937684994,9.91033918166e-06,0.044824540687,4.67670134646e-06,0.638194497353,0.000180895214881,0.474406986785,6.09824103884e-05,0.0392214731012,4.09211367816e-06
+30.0,1.78703649759,8.71631801519e-06,0.0498060315638,4.19672514072e-06,0.672269587397,0.000222039052097,0.49290345788,5.17537496757e-05,0.0435802776184,3.67213449813e-06
+35.0,1.79331710368,7.67929979274e-06,0.0537756767318,4.17496263674e-06,0.697074807147,0.000283902835318,0.505623164222,5.08820414675e-05,0.0470537171403,3.65309230715e-06
+40.0,1.79848833351,7.79893066162e-06,0.0569737033658,4.09666540937e-06,0.71861719623,0.000292849476455,0.517414631692,5.68520431634e-05,0.0498519904451,3.5845822332e-06
+45.0,1.80311347016,7.43527337722e-06,0.0596382809952,4.30481228075e-06,0.72561670541,0.000287783524623,0.527963506391,5.19683083942e-05,0.0521834958708,3.76671074566e-06
+50.0,1.8071680803,7.55457149373e-06,0.0619873457502,4.42518046826e-06,0.727588005008,0.000218093219384,0.537053805246,5.49759366798e-05,0.0542389275314,3.87203290973e-06
+60.0,1.81389491917,7.45310847189e-06,0.0658559355565,4.755773057e-06,0.73560230507,9.67997229377e-05,0.553389592836,5.12229088031e-05,0.057623943612,4.16130142488e-06
+70.0,1.81873948076,5.95541814047e-06,0.0687077936584,4.67294624186e-06,0.745681333375,6.5191549057e-05,0.562329245071,4.28390311996e-05,0.0601193194511,4.08882796163e-06
+80.0,1.82291914269,4.98589842432e-06,0.0709997694877,4.84312070807e-06,0.754013493439,5.53258367949e-05,0.5685317156,3.7943347888e-05,0.0621247983017,4.23773061956e-06
+90.0,1.82676216543,4.05257155426e-06,0.072885112344,4.45798797341e-06,0.759397109532,3.0196713057e-05,0.573473126566,2.73145215089e-05,0.063774473301,3.90073947674e-06
+100.0,1.83010458993,3.53055333743e-06,0.0742055991127,4.45595667778e-06,0.763633137728,2.38200264831e-05,0.574680531436,1.63846986701e-05,0.0649298992236,3.89896209306e-06
+150.0,1.84442828136,3.35628965579e-06,0.0765708365713,4.55154788985e-06,0.773217311598,2.4214406363e-05,0.561392280817,1.34230127094e-05,0.0669994819999,3.98260440362e-06
+200.0,1.8549137982,3.06456298819e-06,0.0756229513289,4.20060935495e-06,0.772543117542,2.30729485197e-05,0.541153769031,1.29336158487e-05,0.0661700824128,3.67553318558e-06
+250.0,1.86275322574,2.68815757306e-06,0.0747966593161,3.57630881276e-06,0.77255786095,1.90724305632e-05,0.523252899332,1.1385665284e-05,0.0654470769016,3.12927021117e-06
+500.0,1.88087639544,2.7399335807e-06,0.0785630727362,3.4354557974e-06,0.80047916112,1.74987500461e-05,0.475556616749,1.11895848387e-05,0.0687426886442,3.00602382272e-06
+750.0,1.88423731366,2.85479328045e-06,0.0799957403282,4.15504730621e-06,0.808289207011,2.09929641205e-05,0.462969826784,1.14418961056e-05,0.0699962727871,3.63566639294e-06
+1000.0,1.88510397221,2.92233738177e-06,0.08019327584,4.17131715851e-06,0.809253828205,2.10176926606e-05,0.459547279028,1.17254586495e-05,0.07016911636,3.6499025137e-06
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g001-20160515_120447.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g002-20160515_120450.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g003-20160515_120451.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g004-20160515_120506.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g005-20160515_120512.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g006-20160515_120514.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g007-20160515_120528.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g008-20160515_120600.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g009-20160515_120606.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g010-20160515_120647.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g011-20160516_193847.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g012-20160516_193848.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g013-20160516_193918.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g014-20160516_193919.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g015-20160516_193919.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g016-20160516_194034.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g017-20160516_194037.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g018-20160516_194044.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g019-20160516_194049.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g020-20160516_194058.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g021-20160516_194059.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g022-20160516_194130.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g023-20160516_194152.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g024-20160516_194157.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g025-20160516_194240.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g026-20160516_194328.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g027-20160516_194328.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g028-20160516_194401.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g029-20160516_194407.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g030-20160516_194442.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g031-20160517_144710.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g032-20160517_144734.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g033-20160517_144734.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g034-20160517_144803.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g035-20160517_144815.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g036-20160517_144859.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g037-20160517_144909.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g038-20160517_144913.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g039-20160517_144915.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g040-20160517_144922.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g041-20160517_144947.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g042-20160517_145040.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g043-20160517_145112.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g044-20160517_145235.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g045-20160517_145300.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g046-20160517_145321.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g047-20160517_145344.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g048-20160517_145357.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g049-20160517_145449.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g050-20160517_145503.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g051-20160519_213031.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g052-20160519_213749.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g053-20160519_214334.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g054-20160519_214609.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g055-20160519_214617.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g056-20160519_214821.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g057-20160519_214820.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g058-20160519_214856.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g059-20160519_214942.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g060-20160519_215253.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g061-20160519_215319.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g062-20160519_215410.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g063-20160519_215444.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g064-20160519_215923.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g065-20160519_220512.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g066-20160519_220733.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g067-20160519_220804.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g068-20160519_220827.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g069-20160519_220910.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g070-20160519_220933.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g071-20160519_221028.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g072-20160519_221048.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g073-20160519_221625.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g074-20160519_221715.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g075-20160519_221720.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g076-20160519_221732.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g077-20160519_221741.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g078-20160519_221809.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g079-20160519_222042.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g080-20160519_222049.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g081-20160519_222132.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g082-20160519_222146.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g083-20160519_222701.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g084-20160519_222801.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g085-20160519_222812.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g086-20160519_222904.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g087-20160519_222915.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g088-20160519_223353.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g089-20160519_223401.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g090-20160519_223452.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g091-20160519_223516.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g092-20160519_223643.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g093-20160519_223739.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g094-20160519_223914.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g095-20160519_224104.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g096-20160519_224140.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g097-20160519_224421.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g098-20160519_224441.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g099-20160519_224558.csv,,,,,,,,,,
+# logfiles/GaussianLogs/owl_thresh/20_thr_owl/20_thr_owl_g100-20160519_225028.csv,,,,,,,,,,

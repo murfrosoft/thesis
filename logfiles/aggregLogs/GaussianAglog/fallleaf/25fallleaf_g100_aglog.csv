@@ -1,0 +1,134 @@
+# Aggregate Log Version: 1.01,,,,,,,,,,
+# Log Name: logfiles/25fallleaf_g100_aglog.csv,,,,,,,,,,
+# Noise%, Dimension, Dim Std Err, Variance, Var Std Err, Sum(Abs(Diff), SAD Std Err, Sum(Abs(CenDiff)), SAC Std Err, Avg Diff Mean Squared, ADMS Ste
+0.0,1.21836602601,1.11581612312e-17,0.00847444042953,1.22042388466e-19,0.698279725394,1.11581612312e-17,0.40127001331,1.11581612312e-18,0.00741513537583,5.23038807712e-20
+1.0,1.2584439868,2.3641816924e-05,0.0111591067239,1.34737766827e-05,0.642567985762,0.000969991399752,0.45776296277,0.000278351416753,0.00976421838341,1.17895545974e-05
+2.0,1.30976793574,4.50502468838e-05,0.0136538755546,1.17465605596e-05,0.593401038874,0.000677196241392,0.454740254865,0.000341970919806,0.0119471411103,1.02782404897e-05
+3.0,1.34876195676,3.89473242555e-05,0.014626444858,1.34997511323e-05,0.693754357549,0.000892306870647,0.424799479011,0.000382733259276,0.0127981392508,1.18122822408e-05
+4.0,1.37698099592,5.32646155951e-05,0.014398952353,1.6976480572e-05,0.826602316225,0.000955463348725,0.394971794947,0.000393412005068,0.0125990833088,1.48544205005e-05
+5.0,1.39423742391,4.97751514354e-05,0.0142193030281,1.57450713959e-05,0.884675605866,0.000945311601075,0.402281211302,0.000339686638682,0.0124418901496,1.37769374714e-05
+6.0,1.40759396175,4.27094368045e-05,0.0147696269218,1.44332438227e-05,0.917664899906,0.000884818440482,0.411845074508,0.000345720136103,0.0129234235566,1.26290883448e-05
+7.0,1.41845380713,4.52459466592e-05,0.0170138507661,1.5323166745e-05,0.957981179972,0.000900712427994,0.433650765512,0.000323181602301,0.0148871194203,1.34077709018e-05
+8.0,1.42505479617,5.53448385894e-05,0.0209943685411,1.94019182798e-05,1.01996842626,0.00124198100506,0.459015008675,0.000294196916882,0.0183700724735,1.69766784949e-05
+9.0,1.4312199447,4.59483281377e-05,0.0258288613693,2.25277836524e-05,1.0877722507,0.00133480327399,0.485074089654,0.000277218922438,0.0226002536981,1.97118106958e-05
+10.0,1.43606047494,3.71216702702e-05,0.0312153922429,2.47070570389e-05,1.14506549982,0.00139195778367,0.53188372443,0.000398390027637,0.0273134682125,2.16186749091e-05
+15.0,1.45838402187,3.59759554472e-05,0.0578255798519,2.20238374369e-05,1.10726556194,0.00106396321547,0.681411871428,0.000275208641359,0.0505973823705,1.92708577573e-05
+20.0,1.46408375199,3.96257160577e-05,0.0916031497677,2.32967307925e-05,1.31022628499,0.00124619225419,0.797154219212,0.000263510856042,0.0801527560468,2.03846394434e-05
+25.0,1.47172028835,4.28517152634e-05,0.124511976067,2.2317045997e-05,1.43413971125,0.00108896564559,0.889823060771,0.000288534101239,0.108947979058,1.95274152474e-05
+30.0,1.47799141409,4.1917052864e-05,0.153817614276,2.31309074825e-05,1.34054701002,0.000839227639289,0.920108840955,0.000301316173083,0.134590412491,2.02395440472e-05
+35.0,1.48087138656,5.47073470281e-05,0.182075049469,3.30498149255e-05,1.36470688626,0.00081599180778,0.954103720904,0.000269679267074,0.159315668286,2.89185880598e-05
+40.0,1.4811614785,4.65200627983e-05,0.207545859361,3.17296927579e-05,1.40289919496,0.000792154896586,0.993290700762,0.000212025081958,0.181602626941,2.77634811632e-05
+45.0,1.48255211397,2.93455661212e-05,0.231632689057,2.54787939513e-05,1.43158462599,0.00071001387509,1.04437425599,0.00020741530702,0.202678602925,2.22939447074e-05
+50.0,1.48450545465,2.8961927932e-05,0.254927847815,2.50762858953e-05,1.45293872647,0.000561409926452,1.09715676432,0.000190202525204,0.223061866838,2.19417501584e-05
+60.0,1.48461965169,4.59488873076e-05,0.295522386786,4.30349429732e-05,1.54715507487,0.000552073331845,1.20005728315,0.000180437084329,0.258582088438,3.76555751016e-05
+70.0,1.47982466535,5.13634315782e-05,0.32602886779,5.19340672145e-05,1.61244756649,0.000602074890342,1.27336333923,0.000194089450645,0.285275259316,4.54423088127e-05
+80.0,1.47544575308,4.55821901985e-05,0.351834354734,4.34982588191e-05,1.64538118441,0.000480952200246,1.32780203762,0.000198301792641,0.307855060392,3.80609764667e-05
+90.0,1.47200792848,4.51231072959e-05,0.373783055599,4.61567247778e-05,1.66998775492,0.000482163472517,1.37541869538,0.000189666924894,0.327060173649,4.03871341806e-05
+100.0,1.46850796898,4.42292113332e-05,0.391703404041,4.4650751844e-05,1.68852737315,0.000374663795344,1.40826687131,0.000174137276932,0.342740478536,3.90694078635e-05
+150.0,1.46129843958,2.92162653236e-05,0.456919918937,3.64175215137e-05,1.75318369969,0.000237042483487,1.52387016725,0.000130510129856,0.39980492907,3.18653313245e-05
+200.0,1.4624387832,1.34468080422e-05,0.501361626651,2.23493386901e-05,1.80420711335,9.14024258357e-05,1.60562889791,5.32522088394e-05,0.43869142332,1.95556713538e-05
+250.0,1.46590935999,1.32479035443e-05,0.533115525551,2.08612758212e-05,1.8300292281,6.26212006375e-05,1.64675735849,4.25309682631e-05,0.466476084858,1.82536163436e-05
+500.0,1.47422696848,1.20913236409e-05,0.589785094737,2.06580603746e-05,1.85609869384,3.39588190354e-05,1.69933053674,2.86741955473e-05,0.516061957895,1.80758028278e-05
+750.0,1.47558283894,1.18226218877e-05,0.598023004973,1.94267125229e-05,1.86119309577,3.29323000716e-05,1.70728574152,2.83930028482e-05,0.523270129351,1.69983734575e-05
+1000.0,1.47580147633,1.13754845921e-05,0.599356663284,1.88925235465e-05,1.86211215872,3.22193680076e-05,1.70864434565,2.75625343345e-05,0.524437080373,1.65309581032e-05
+# The data files below are included in this aggregation:,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g001-20160512_034343.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g002-20160512_034422.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g003-20160512_034431.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g004-20160512_034446.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g005-20160512_034448.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g006-20160512_034507.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g007-20160512_034541.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g008-20160512_034556.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g009-20160512_034626.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g010-20160512_034626.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g011-20160515_043334.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g012-20160515_043418.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g013-20160515_043424.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g014-20160515_043457.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g015-20160515_043509.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g016-20160515_043514.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g017-20160515_043514.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g018-20160515_043540.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g019-20160515_043546.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g020-20160515_043642.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g021-20160515_043647.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g022-20160515_043659.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g023-20160515_043700.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g024-20160515_043722.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g025-20160515_043745.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g026-20160515_043756.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g027-20160515_043810.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g028-20160515_043821.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g029-20160515_043837.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g030-20160515_043908.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g031-20160515_043916.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g032-20160515_043945.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g033-20160515_043954.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g034-20160515_044023.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g035-20160515_044033.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g036-20160515_044048.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g037-20160515_044051.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g038-20160515_044116.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g039-20160515_044128.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g040-20160515_044130.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g041-20160515_044149.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g042-20160515_044150.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g043-20160515_044201.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g044-20160515_044212.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g045-20160515_044245.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g046-20160515_044251.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g047-20160515_044255.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g048-20160515_044314.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g049-20160515_044315.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g050-20160515_044321.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g051-20160515_044334.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g052-20160515_044339.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g053-20160515_044346.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g054-20160515_044351.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g055-20160515_044500.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g056-20160515_044503.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g057-20160515_044508.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g058-20160515_044516.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g059-20160515_044529.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g060-20160515_044530.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g061-20160515_044605.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g062-20160515_044706.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g063-20160515_044806.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g064-20160515_044810.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g065-20160515_044824.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g066-20160515_044903.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g067-20160515_045150.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g068-20160515_045346.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g069-20160515_045733.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g070-20160515_045801.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g071-20160515_063748.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g072-20160515_064018.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g073-20160515_064027.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g074-20160515_064415.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g075-20160515_064451.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g076-20160515_064616.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g077-20160515_064619.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g078-20160515_064639.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g079-20160515_064704.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g080-20160515_064725.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g081-20160515_064740.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g082-20160515_064905.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g083-20160515_064908.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g084-20160515_064913.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g085-20160515_064929.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g086-20160515_064933.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g087-20160515_064949.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g088-20160515_064950.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g089-20160515_064952.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g090-20160515_064958.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g091-20160515_065035.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g092-20160515_065041.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g093-20160515_065057.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g094-20160515_065100.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g095-20160515_065116.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g096-20160515_065134.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g097-20160515_065158.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g098-20160515_065206.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g099-20160515_065220.csv,,,,,,,,,,
+# logfiles/GaussianLogs/fallleaf_edge/25fallleaf/25fallleaf_g100-20160515_065221.csv,,,,,,,,,,
