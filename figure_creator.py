@@ -36,24 +36,39 @@ def main():
     # CODE LIST:
     #   -u (Uniform Noise Plot 2x2) -u n1 n2 n3 imagename.png
     #   -g (Gaussian Noise Plot 2x2) -g 10 100 imagename.png
-    #   -v (Uniform Noise Dim vs. Slope Variance 1x2)  -v aggregate/logfile.csv
+    #   -a (Uniform Noise Dim vs. Slope Variance 1x2)  -v aggregate/logfile.csv
     # **-j (Gaussian Noise Dim vs. Slope Variance 1x2) -j aggregate/logfile.csv
     # **-m (Multiple Uniform Dim vs. Slope Variance 1x2)  -m aggregate/logfile/* (up to n?)
     # **-n (Multiple Gaussian Dim vs. Slope Variance 1x2) -n aggregate/logfile/* (up to n?)
     # **-k (Plot all Dimension vs. All keys 1x4?) -k aggregate/logfile.csv
 
     if len(sys.argv) < 3:
-        print("Insufficient Arguments")
+        print("Insufficient Arguments:")
+        print("USAGE:")
+        print(" -u (Uniform Noise Plot 2x2)  -u n1 n2 n3 imagename.png")
+        print(" -g (Gaussian Noise Plot 2x2) -g sigma1 sigma2 imagename.png")
+        print(" -au/-ag (Uniform Noise Dim vs. Slope Variance 1x2)  -au aggregatelog.csv")
+        print(" -m (Multiple Uniform Noise vs. SV 1x2)         -m aggregatelog(*).csv")
         return
 
     # expect a '-xyz' type of argument
-    if sys.argv[1][1] == "v":
+    if sys.argv[1][1] == "a":
+        if len(sys.argv[1]) > 2 and sys.argv[1][2] == "u":
+            model = "U"
+        elif len(sys.argv[1]) > 2 and sys.argv[1][2] == "g":
+            model = "G"
+        else:
+            print(" >> use -au (uniform) or -ag (gaussian)")
+            return
+        
         # Parse an aggregated log file
         filename = sys.argv[2]
         file = open( filename, 'r' )
         image_name = filename.split('/')
         image_name = image_name[-1].split('_')
         image_name = image_name[0]
+
+        print(">> IMAGE NAME:",image_name)
         
         # Preparing to plot Dimension vs. Uniform Noise and Slope Variance vs. Uniform Noise
         d = []
@@ -69,13 +84,18 @@ def main():
                 un.append(float(data[0]))
 
         # Find some statistics about the data
-        idx1 = sv.index(max(sv))
-        vert_bar = un[idx1]     # grab noise value where max slope variance occurs
+        d_min = d.index(min(d))
+        region1 = un[d_min]
+        sv_max = sv.index(max(sv))
+        region2 = un[sv_max]     # grab noise value where max slope variance occurs
         horiz_bar = d[0]        # grab initial dimension value to project horizontally
 
         # Now prepare to create the figure
         fig, axarr = plt.subplots(2, sharex=True)
-        fig.suptitle("Box Count Algorithm on " + image_name + " (Uniform Noise, 100 Seeds)", fontsize=14, fontweight='bold')
+        if model == "U":
+            fig.suptitle("Box Count Algorithm on " + image_name + " (Uniform Noise, 100 Seeds)", fontsize=14, fontweight='bold')
+        else:
+            fig.suptitle("Box Count Algorithm on " + image_name + " (Gaussian Noise, 100 Seeds)", fontsize=14, fontweight='bold')
         fig.set_size_inches(10,10,forward=True)  # try to set size of plot??
 
         # set up gridlines for 1st plot
@@ -85,32 +105,61 @@ def main():
         axarr[0].set_xscale('log')
         axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
         axarr[0].set_ylim(0,2)
-        #axarr[0].errorbar(nx,dimy,dimerr,fmt='r')
-        # Plot a vertical bar at slope variance max
-        axarr[0].plot((vert_bar,vert_bar),(0,2),'r--')
-        # Plot a horizontal bar at initial dimension value
-        axarr[0].plot((un[1],100),(horiz_bar,horiz_bar),'g--')
-        # Annotate some text highlighting original dimension
-        axarr[0].text(.001, d[0]+0.02, "Dimension = " + format(d[0], '.2f'), color='g')
+
+        if model == "U":
+            #axarr[0].errorbar(nx,dimy,dimerr,fmt='r')
+            # Plot a vertical bar at slope variance max
+            if( region1 > un[0] ):
+                axarr[0].plot((region1,region1),(0,2),'r--')
+            axarr[0].plot((region2,region2),(0,2),'r--')
+            # Plot a horizontal bar at initial dimension value
+            axarr[0].plot((un[1],100),(horiz_bar,horiz_bar),'g--')
+            # Annotate some text highlighting original dimension
+            if( region1 > un[0] ):
+                axarr[0].text(region1, d[0]+0.02, " Dimension = " + format(d[0], '.2f'), color='g')
+            else:
+                axarr[0].text(region2, d[0]+0.02, " Dimension = " + format(d[0], '.2f'), color='g')
+        else:
+            # Plot a horizontal bar at initial dimension value
+            axarr[0].plot((un[1],1000),(horiz_bar,horiz_bar),'g--')
+            if ( horiz_bar > 1.8 ):
+                axarr[0].text(100,d[0]-0.1, " Dimension = " + format(d[0], '.2f'), color='g')
+            else:
+                axarr[0].text(un[2],d[0]-0.1, " Dimension = " + format(d[0], '.2f'), color='g')
         axarr[0].plot(un, d, label="dimension")
         
         # set up gridlines for 2nd plot
         axarr[1].grid(b=True, which='major', color=AXIS_GRAY, linestyle='-')
-        
         axarr[1].set_ylabel("Slope Variance")
-        axarr[1].set_xlabel("% Uniform Noise")
         axarr[1].set_xscale('log')
         axarr[1].set_title("Mean Slope Variance vs. Noise %")
-        axarr[1].set_ylim(0,1)
-        #axarr[1].errorbar(nx,vary,varerr,fmt='r')
-        # Plot a vertical bar at slope variance max
-        axarr[1].plot((vert_bar,vert_bar),(0,2),'r--')
-        # Annotate some text highlighting where maximum slope variance occurs
-        axarr[1].text(vert_bar+.1, .8, str(vert_bar) + "% Noise", color='r')
+        if model == "U":
+            axarr[1].set_xlabel("% Uniform Noise")
+            axarr[1].set_ylim(0,1)
+            #axarr[1].errorbar(nx,vary,varerr,fmt='r')
+            # Plot a vertical bar at slope variance max
+            if( region1 > un[0] ):
+                axarr[1].plot((region1,region1),(0,2),'r--')
+                axarr[1].text(region1, .8, " " + str(region1) + "% Noise", color='r')
+            axarr[1].plot((region2,region2),(0,2),'r--')
+            # Annotate some text highlighting where maximum slope variance occurs
+            axarr[1].text(region2, .8, " " + str(region2) + "% Noise", color='r')
+        else:
+            # Set Gaussian Limits / Labels
+            axarr[1].set_xlabel("Sigma")
+            axarr[1].set_ylim(0,(sv[sv_max]+1)//1)  # Scale Y-axis to maximum slope variance value
         axarr[1].plot(un,sv, label="variance")
 
-        plt.savefig("Figure_DvsSV_Uniform_"+image_name+".png")
-        if( PREVIEW ):
+        if model == "U":
+            saved_figure_name = "Fig_Uniform_DvSV_"+image_name+".png"
+
+        else:
+            saved_figure_name = "Fig_Gaussian_DvSV_"+image_name+".png"
+
+        if( True ):
+            plt.savefig(saved_figure_name)
+            print(">> Figured created:", saved_figure_name)
+        else:
             plt.show()
     # ================================================================================
     # Plot Multiple Uniform Noise Div vs. Slope Variance Plots
