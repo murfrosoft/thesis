@@ -48,7 +48,7 @@ def main():
         print(" -u (Uniform Noise Plot 2x2)  -u n1 n2 n3 imagename.png")
         print(" -g (Gaussian Noise Plot 2x2) -g sigma1 sigma2 imagename.png")
         print(" -au/-ag (Uniform Noise Dim vs. Slope Variance 1x2)  -au aggregatelog.csv")
-        print(" -m (Multiple Uniform Noise vs. SV 1x2)         -m aggregatelog(*).csv")
+        print(" -mu/-mg (Multiple Uniform/Gaussian Noise vs. SV 1x2) -mu aggregatelog(*).csv")
         return
 
     # expect a '-xyz' type of argument
@@ -170,18 +170,29 @@ def main():
             print("-m too few arguments")
             return
 
+        if len(sys.argv[1]) > 2 and sys.argv[1][2] == "u":
+            model = "U"
+        elif len(sys.argv[1]) > 2 and sys.argv[1][2] == "g":
+            model = "G"
+        else:
+            print(" >> use -mu (uniform) or -mg (gaussian)")
+            return
+
         # count the number of files to plot:
         plotcount = len(sys.argv) - 2
         print("Adding", plotcount, "plots to Figure")
 
         # Create the figure shell before we start parsing data and adding to plot
         fig, axarr = plt.subplots(2, sharex=True)
-        fig.suptitle("Box Count Algorithm on " + str(plotcount) + " images (Uniform)", fontsize=14, fontweight='bold')
+        if (model == "U"):
+            fig.suptitle("Box Count Algorithm on " + str(plotcount) + " images (Uniform Noise)", fontsize=14, fontweight='bold')
+        else:
+            fig.suptitle("Box Count Algorithm on " + str(plotcount) + " images (Gaussian Noise)", fontsize=14, fontweight='bold')
         fig.set_size_inches(10,10,forward=True)  # try to set size of plot??
 
         # Add Marker styles/colors to plots
         color_idx = 0
-        color_m = ("#ff0000","#ff9900","#33cc33","#339933","#0066ff","#ff00ff","9900cc","#996633","#000000")
+        color_m = ("#ff0000","#ff9900","#33cc33","#339933","#0066ff","#ff00ff","#9900cc","#996633","#000000")
         marker_m = ('o','d','*','o','d','*','o','d','*')
         marker_m = ('.','x','4','.','x','4','.','x','4')
 
@@ -228,7 +239,10 @@ def main():
             
             axarr[0].set_ylabel("Fractal Dimension")
             axarr[0].set_xscale('log')
-            axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
+            if (model == "U"):
+                axarr[0].set_title("Mean Fractal Dimension vs. Noise %")
+            else:
+                axarr[0].set_title("Mean Fractal Dimension vs. Sigma")
             axarr[0].set_ylim(0,2)
             #axarr[0].errorbar(nx,dimy,dimerr,fmt='r')
             ## Plot a vertical bar at slope variance max
@@ -243,9 +257,15 @@ def main():
             axarr[1].grid(b=True, which='major', color=AXIS_GRAY, linestyle='-')
             
             axarr[1].set_ylabel("Slope Variance")
-            axarr[1].set_xlabel("% Uniform Noise")
+            if( model == "U"):
+                axarr[1].set_xlabel("% Uniform Noise")
+            else:
+                axarr[1].set_xlabel("Sigma")
             axarr[1].set_xscale('log')
-            axarr[1].set_title("Mean Slope Variance vs. Noise %")
+            if (model == "U"):
+                axarr[1].set_title("Mean Slope Variance vs. Noise %")
+            else:
+                axarr[1].set_title("Mean Slope Variance vs. Sigma")
             axarr[1].set_ylim(0,1)
             #axarr[1].errorbar(nx,vary,varerr,fmt='r')
             ## Plot a vertical bar at slope variance max
@@ -260,14 +280,20 @@ def main():
 
         # temporary vertical bars:  0.003% noise, and 0.3% noise
         ## Plot a vertical bar at slope variance max
-        axarr[0].plot((0.003,0.003),(0,2),'r--')
-        axarr[0].plot((0.3,0.3),(0,2),'r--')
-        axarr[1].plot((0.003,0.003),(0,2),'r--')
-        axarr[1].plot((0.3,0.3),(0,2),'r--')
+        #axarr[0].plot((0.003,0.003),(0,2),'r--')
+        #axarr[0].plot((0.3,0.3),(0,2),'r--')
+        #axarr[1].plot((0.003,0.003),(0,2),'r--')
+        #axarr[1].plot((0.3,0.3),(0,2),'r--')
 
         axarr[0].legend(loc=0, ncol=2) # , borderaxespad=0.
-        plt.savefig("Figure_DvsSV_Uniform_BIG"+image_name+".png")
-        if( PREVIEW ):
+        if( True ):
+            if( model == "U"):
+                plt.savefig("Fig_DvsSV_Uniform_Multiplot_"+image_name+".png")
+                print(">> SAVED FILE:","Fig_DvsSV_Uniform_Multiplot_"+image_name+".png")
+            else:
+                plt.savefig("Fig_DvsSV_Gaussian_Multiplot_"+image_name+".png")
+                print(">> SAVED FILE:","Fig_DvsSV_Gaussian_Multiplot_"+image_name+".png")
+        else:
             plt.show()
     # ================================================================================
     # Uniform Noise Examples
